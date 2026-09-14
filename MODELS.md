@@ -6,7 +6,7 @@ Results are updated monthly. Model behavior changes with each release, and a mod
 
 ## Latest run
 
-No published run yet. The first monthly bench will be posted after v0.1.0, covering the current Claude, GPT, and Gemini lineups and at least two open-weight models.
+No published run yet. v0.1.0 shipped in September 2026. The first monthly bench is still pending and will cover the current Claude, GPT, and Gemini lineups and at least two open-weight models.
 
 ## How to reproduce
 

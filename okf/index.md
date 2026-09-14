@@ -5,6 +5,7 @@ okf_version: "0.2"
 # Dignified Language Standard
 
 * [Load order](load-order.md) - Sequencing guidance for any consumer loading the OKF bundle.
+* [log.md](log.md) - Dated changelog for the OKF bundle.
 * [standard/](standard/) - The base standard. Person-first language, no deficit framing, plain language by default, and reporting standards for sensitive topics.
 * [trauma-informed/](trauma-informed/) - The certified Trauma-Informed layer. Requires the base standard underneath it. Adds SAMHSA's framework, four fundraising and storytelling rules, and a Crisis protocol.
 * [modules/](modules/) - Add-on modules separate from the Dignified Language Standard and Trauma-Informed layer. Adopt individually; none are required for conformance.

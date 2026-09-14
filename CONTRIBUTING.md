@@ -31,16 +31,7 @@ After any change under `okf/`, regenerate derived outputs:
 python3 scripts/build.py
 ```
 
-This updates `packaging/compiled/`, `packaging/chatgpt/`, `packaging/gemini/`, and `packaging/claude-skill/*/standard.md`. Commit the regenerated files with your pull request.
-
-To rebuild Claude skill zips for release:
-
-```
-mkdir -p packaging/releases
-(cd packaging/claude-skill/dignified-language && zip -r ../../releases/dignified-language.zip .)
-(cd packaging/claude-skill/trauma-informed && zip -r ../../releases/trauma-informed.zip .)
-(cd packaging/claude-skill/human-voice && zip -r ../../releases/human-voice.zip .)
-```
+This updates `packaging/compiled/`, `packaging/chatgpt/`, `packaging/gemini/`, `packaging/claude-skill/*/standard.md`, `packaging/claude-skill/human-voice/module.md`, and `packaging/releases/*.zip`. Commit the regenerated files with your pull request.
 
 ## Process
 

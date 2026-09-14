@@ -13,10 +13,17 @@ For fine-grained control, walk `okf/` using the sequence in [okf/load-order.md](
 
 `okf/` is the source of truth. If compiled or platform packaging disagrees with `okf/`, trust `okf/`.
 
+## Brand voice
+
+- **Organization voice templates (step 9 in load order):** `okf/templates/voice-interview.md` (interview megaprompt) and `okf/templates/voice-profile.md` (blank profile). Use these to build your organization's voice file.
+- **Optional human-voice module:** `packaging/compiled/human-voice.md`, or the chatgpt/gemini variants, or `packaging/claude-skill/human-voice/` (skill zip in `packaging/releases/human-voice.zip`).
+
+A voice profile may add preferred terms and tone but may not override standard or Trauma-Informed rules.
+
 ## What not to do
 
 - Do not run git init, create-repo, push, or other publish/setup workflows unless the user explicitly asks.
-- Do not hand-edit generated files under `packaging/compiled/`, `packaging/chatgpt/`, or `packaging/gemini/`. Regenerate with `python3 scripts/build.py` after changes under `okf/`.
+- Do not hand-edit generated files under `packaging/compiled/`, `packaging/chatgpt/`, `packaging/gemini/`, or generated `standard.md` / `module.md` under `packaging/claude-skill/`. Regenerate with `python3 scripts/build.py` after changes under `okf/`.
 - Do not rewrite rule bodies unless the user explicitly requests a rule change.
 
 ## House style
