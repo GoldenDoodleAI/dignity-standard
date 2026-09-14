@@ -1,1 +1,1 @@
-See [index.md](index.md) for the bundle index and load order.
+See [index.md](index.md) for the bundle directory listing and [load-order.md](load-order.md) for sequencing guidance.

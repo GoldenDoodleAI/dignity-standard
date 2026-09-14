@@ -1,18 +1,10 @@
 ---
-type: bundle
-title: Dignified Language Standard (OKF bundle)
-description: Root of the OKF bundle. Load standard/ first, then trauma-informed/ if applicable, then vocabulary and modules, then your organization's own voice file.
-tags: [okf, language, dignity, trauma-informed]
+okf_version: "0.2"
 ---
 
-# Bundle index
+# Dignified Language Standard
 
-Load order for any consumer:
-
-1. `standard/precedence.md` and `standard/principles.md`
-2. `standard/rules/*.md`
-3. `standard/vocabulary/*.md` (only the sectors that apply)
-4. `standard/protocols/*.md`
-5. `trauma-informed/**` (only if adopting the certified layer)
-6. `modules/**` (optional)
-7. Your organization's voice file, which may add preferred terms and tone but may not override anything above it.
+* [Load order](load-order.md) - Sequencing guidance for any consumer loading the OKF bundle.
+* [standard/](standard/) - The base standard. Person-first language, no deficit framing, plain language by default, and reporting standards for sensitive topics.
+* [trauma-informed/](trauma-informed/) - The certified Trauma-Informed layer. Requires the base standard underneath it. Adds SAMHSA's framework, four fundraising and storytelling rules, and a Crisis protocol.
+* [modules/](modules/) - Add-on modules separate from the Dignified Language Standard and Trauma-Informed layer. Adopt individually; none are required for conformance.

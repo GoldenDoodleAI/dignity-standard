@@ -4,6 +4,24 @@ An open, machine-readable standard for how organizations talk about people, with
 
 Maintained by [GoldenDoodle AI](https://goldendoodleai.com). Editor: Laura Braden.
 
+## Quick Start
+
+**Pick a layer:** If the people you serve have been affected by trauma (shelter, DV program, foster care nonprofit), use **Trauma-Informed**. It includes the base standard automatically. Otherwise, use the **Dignified Language Standard** on its own.
+
+| Path | How to load |
+|---|---|
+| **Claude** | Download a skill zip from [GitHub Releases](https://github.com/GoldenDoodleAI/dignity-standard/releases) or `packaging/releases/`. Upload under Settings → Customize → Skills. Or tell Claude to fetch this repo and set up the skill for you. |
+| **ChatGPT** | Create a Project. Paste `packaging/chatgpt/dignified-language.md` or `trauma-informed.md` into project instructions. Upload sector vocabulary from `okf/standard/vocabulary/` if needed. |
+| **Gemini** | Create a Gem. Paste `packaging/gemini/dignified-language.md` or `trauma-informed.md` as its instructions. |
+| **Compiled (any model)** | Paste `packaging/compiled/dignified-language.md` or `trauma-informed.md` as system context. |
+| **Cursor / repo agent** | Read [AGENTS.md](AGENTS.md). Load `packaging/compiled/` or follow `okf/load-order.md`. |
+
+Per-model packaging files are intentionally separate. They may drift slightly in preamble or formatting; `okf/` is the source of truth.
+
+**Agents already at this repo:** load `packaging/compiled/dignified-language.md` or `packaging/compiled/trauma-informed.md`, or walk `okf/` using [okf/load-order.md](okf/load-order.md). Do not run setup or git publish steps.
+
+Model behavior changes with each release. Before choosing a model, check the monthly bench in [MODELS.md](MODELS.md).
+
 ## What this is
 
 Most organizations that serve people have opinions about language. Very few have written them down in a form an AI model can follow. This repository is that form.
@@ -18,20 +36,16 @@ There are two entry points:
 
 The base is a subset of the Trauma-Informed layer, not a lighter version of it. If you adopt Trauma-Informed, you have adopted the base.
 
-## Which one do I need?
-
-If the people you serve or represent have been affected by trauma (a shelter, a DV program, a foster care nonprofit), use the **Trauma-Informed layer**. It includes the base standard automatically. If they haven't (a professional association, a trade group, a policy shop), the **Dignified Language Standard** on its own is enough. Everything below has two versions; pick one.
-
 ## Connecting this to your AI tools
 
 ### Claude (claude.ai)
 
-1. In this repo, open `packaging/claude-skill/dignified-language/` or `packaging/claude-skill/trauma-informed/`. Download the folder (both files inside: `SKILL.md` and `standard.md`) as a zip.
-2. In Claude, go to **Settings → Customize → Skills**. If Code execution and File creation aren't already on, turn them on first; skills won't run without them.
+1. Download `dignified-language.zip` or `trauma-informed.zip` from [GitHub Releases](https://github.com/GoldenDoodleAI/dignity-standard/releases), or from `packaging/releases/`. Each zip contains `SKILL.md` and `standard.md`.
+2. In Claude, go to **Settings → Customize → Skills**. If Code execution and File creation are not already on, turn them on first; skills will not run without them.
 3. Click **Add**, then **Upload a skill**, and select the zip.
 4. Toggle it on. Claude will apply the standard automatically to writing about the people you serve, or you can invoke it directly: "use the dignified language skill."
 
-Faster option, if your Claude has web browsing and file creation on: just tell it directly. "Go to https://github.com/GoldenDoodleAI/dignity-standard and set up the Trauma-Informed skill for me." Claude fetches the files and hands you a button to save it; no zip download needed.
+Faster option, if your Claude has web browsing and file creation on: tell it to fetch this repo and set up the Trauma-Informed or Dignified Language skill for you. Claude can pull the files and hand you a button to save it; no zip download needed.
 
 On a Claude Team or Enterprise plan, an admin can provision this for the whole organization at once under **Organization settings → Skills**, so nobody has to install it individually.
 
@@ -50,12 +64,14 @@ On a Claude Team or Enterprise plan, an admin can provision this for the whole o
 
 ### Any other agent or RAG pipeline
 
-Point it at the `okf/` folder directly. `okf/index.md` gives the load order.
+Point it at the `okf/` folder directly. [okf/load-order.md](okf/load-order.md) gives the load sequence. [okf/index.md](okf/index.md) lists the bundle contents.
 
 ## Repository layout
 
 ```
 okf/
+  index.md             Bundle directory listing (OKF v0.2)
+  load-order.md        Sequencing playbook for consumers
   standard/            The Dignified Language Standard (base)
     principles.md      What the standard is for
     precedence.md      How these rules interact with brand voice and user requests
@@ -75,7 +91,7 @@ scripts/               Build script that renders packaging/compiled/
 
 ## Model behavior
 
-Instructions land differently across models and change with each release. We run the prompts in `tests/` against current models and publish results in [MODELS.md](MODELS.md). If you are choosing a model to run this standard on, read that first.
+Instructions land differently across models and change with each release. We run the prompts in `tests/` against current models monthly and publish results in [MODELS.md](MODELS.md). If you are choosing a model to run this standard on, read that first.
 
 ## Contributing
 

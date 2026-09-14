@@ -2,11 +2,11 @@
 
 We run the golden prompts in `tests/prompts/` against current models, with and without the standard loaded, and score them with `tests/rubric.md`.
 
-Results are dated. Model behavior changes with each release, and a model that held the standard in one quarter may not in the next.
+Results are updated monthly. Model behavior changes with each release, and a model that held the standard in one month may not in the next.
 
 ## Latest run
 
-No published run yet. The first results will be posted after the v0.1.0 release, covering the current Claude, GPT, and Gemini lineups and at least two open-weight models.
+No published run yet. The first monthly bench will be posted after v0.1.0, covering the current Claude, GPT, and Gemini lineups and at least two open-weight models.
 
 ## How to reproduce
 

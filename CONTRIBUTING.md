@@ -19,8 +19,32 @@ This standard is maintained by practitioners, not by a committee. If you work in
 
 Every content file starts with YAML frontmatter. `type` is required. Use `title`, `description`, and `tags`. Do not add fields that consumers will not know what to do with.
 
+Index files (`index.md`) carry no frontmatter except the bundle root, which may only declare `okf_version: "0.2"`. Sequencing guidance belongs in [okf/load-order.md](okf/load-order.md), not in indexes.
+
 No em dashes anywhere in this repository. It is a house rule and it is enforced.
+
+## Regenerating packaging
+
+After any change under `okf/`, regenerate derived outputs:
+
+```
+python3 scripts/build.py
+```
+
+This updates `packaging/compiled/`, `packaging/chatgpt/`, `packaging/gemini/`, and `packaging/claude-skill/*/standard.md`. Commit the regenerated files with your pull request.
+
+To rebuild Claude skill zips for release:
+
+```
+mkdir -p packaging/releases
+(cd packaging/claude-skill/dignified-language && zip -r ../../releases/dignified-language.zip .)
+(cd packaging/claude-skill/trauma-informed && zip -r ../../releases/trauma-informed.zip .)
+```
 
 ## Process
 
 Open an issue or a discussion first for anything beyond a typo. Pull requests that change a rule should update the corresponding golden prompt or add one.
+
+## Monthly model bench
+
+We publish model results in [MODELS.md](MODELS.md) on a monthly cadence. If you run the golden prompts against a current model, submit results as a pull request to that file using the table format there.
