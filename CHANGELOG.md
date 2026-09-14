@@ -2,7 +2,9 @@
 
 ## v0.1.1 (September 2026)
 
-Usability and consistency pass: wire the human-voice module into `scripts/build.py`, refresh packaging README and Quick Start guidance, and fix leftover OKF index and documentation gaps from the v0.1.0 usability review. Adds GoldenDoodle AI brand voice templates (`okf/templates/`) and ships human-voice packaging across compiled, ChatGPT, Gemini, and Claude skill surfaces.
+**Brand voice templates** (`okf/templates/voice-interview.md`, `okf/templates/voice-profile.md`): the user-facing addition. Organizations can interview a model or fill in a blank profile to build their step-9 organization voice file.
+
+Usability and consistency pass: fix leftover OKF index and documentation gaps from the v0.1.0 usability review; wire `scripts/build.py` to keep human-voice packaging in sync with `okf/modules/human-voice.md`. Human voice remains optional evolving module standards (AI writing tells), not a shipped product; tooling forthcoming.
 
 ## v0.1.0 (September 2026)
 
