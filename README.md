@@ -14,7 +14,7 @@ Maintained by [GoldenDoodle AI](https://goldendoodleai.com). Editor: Laura Brade
 | **ChatGPT** | Create a Project. Paste `packaging/chatgpt/dignified-language.md` or `trauma-informed.md` into project instructions. Upload sector vocabulary from `okf/standard/vocabulary/` if needed. |
 | **Gemini** | Create a Gem. Paste `packaging/gemini/dignified-language.md` or `trauma-informed.md` as its instructions. |
 | **Compiled (any model)** | Paste `packaging/compiled/dignified-language.md` or `trauma-informed.md` as system context. |
-| **Brand voice** | Interview: paste `okf/templates/voice-interview.md`. Blank profile: copy `okf/templates/voice-profile.md`. Optional human-voice module: `packaging/compiled/human-voice.md`, or the chatgpt/gemini variants, or `packaging/releases/human-voice.zip`. |
+| **Brand voice** | Interview: paste `okf/templates/voice-interview.md`. Blank profile: copy `okf/templates/voice-profile.md`. |
 | **Cursor / repo agent** | Read [AGENTS.md](AGENTS.md). Load `packaging/compiled/` or follow `okf/load-order.md`. |
 
 Per-model packaging files are intentionally separate. They may drift slightly in preamble or formatting; `okf/` is the source of truth.
@@ -41,7 +41,7 @@ The base is a subset of the Trauma-Informed layer, not a lighter version of it. 
 
 ### Claude (claude.ai)
 
-1. Download `dignified-language.zip`, `trauma-informed.zip`, or optional `human-voice.zip` from `packaging/releases/` (or [GitHub Releases](https://github.com/GoldenDoodleAI/dignity-standard/releases) when published). Layer zips contain `SKILL.md` and `standard.md`; the human-voice zip contains `SKILL.md` and `module.md`.
+1. Download `dignified-language.zip` or `trauma-informed.zip` from `packaging/releases/` (or [GitHub Releases](https://github.com/GoldenDoodleAI/dignity-standard/releases) when published). Each zip contains `SKILL.md` and `standard.md`.
 2. In Claude, go to **Settings → Customize → Skills**. If Code execution and File creation are not already on, turn them on first; skills will not run without them.
 3. Click **Add**, then **Upload a skill**, and select the zip.
 4. Toggle it on. Claude will apply the standard automatically to writing about the people you serve, or you can invoke it directly: "use the dignified language skill."
@@ -84,12 +84,14 @@ okf/
     six-principles.md
     rules/             Fundraising and storytelling rules
     protocols/         Crisis protocol
-  modules/             Optional add-ons (human voice standards)
+  modules/             Optional add-ons
   templates/           Brand voice templates (profile blank + interview megaprompt)
 packaging/             Ready-to-load versions for each platform
 tests/                 Golden prompts and the scoring rubric
 scripts/               Build script that renders packaging/
 ```
+
+**Optional modules:** Human voice (`okf/modules/human-voice.md`) is evolving standards for AI writing tells; tooling forthcoming. Packaging exists for maintainers; not a finished product.
 
 ## Model behavior
 

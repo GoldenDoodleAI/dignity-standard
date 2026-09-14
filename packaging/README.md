@@ -5,7 +5,7 @@ Ready-to-load versions of the standard for specific platforms. Everything here i
 ## Layout
 
 - `claude-skill/dignified-language/` and `claude-skill/trauma-informed/`: self-contained Claude skill folders. Each `SKILL.md` is the entry point and references `standard.md` in the same folder.
-- `claude-skill/human-voice/`: optional module skill. `SKILL.md` references `module.md`. Not a layer; does not include the base or Trauma-Informed rules.
+- `claude-skill/human-voice/`: maintainer-only packaging for the evolving human-voice module. `SKILL.md` references `module.md`. Not a layer, not a shipped product surface.
 - `releases/`: zip archives of each Claude skill folder for upload. GitHub Release assets are preferred when available; these copies are the fallback.
 - `chatgpt/`: instruction text for a ChatGPT Project.
 - `gemini/`: instruction text for a Gem.
@@ -17,7 +17,9 @@ Ready-to-load versions of the standard for specific platforms. Everything here i
 
 1. **dignified-language** (base layer)
 2. **trauma-informed** (certified layer, includes base)
-3. **human-voice** (optional module, not a layer)
+3. **human-voice** (optional evolving module, not a layer)
+
+The two layers are the ready product surfaces. Human-voice packaging is regenerated when `okf/modules/human-voice.md` changes so maintainers can keep compiled copies in sync. That is maintenance, not a product launch; end-user tooling for human voice is forthcoming.
 
 Each target writes to `compiled/`, `chatgpt/`, `gemini/`, and the matching `claude-skill/` folder. The script also rebuilds `releases/*.zip` from the Claude skill folders.
 

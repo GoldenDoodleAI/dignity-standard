@@ -16,9 +16,12 @@ For fine-grained control, walk `okf/` using the sequence in [okf/load-order.md](
 ## Brand voice
 
 - **Organization voice templates (step 9 in load order):** `okf/templates/voice-interview.md` (interview megaprompt) and `okf/templates/voice-profile.md` (blank profile). Use these to build your organization's voice file.
-- **Optional human-voice module:** `packaging/compiled/human-voice.md`, or the chatgpt/gemini variants, or `packaging/claude-skill/human-voice/` (skill zip in `packaging/releases/human-voice.zip`).
 
 A voice profile may add preferred terms and tone but may not override standard or Trauma-Informed rules.
+
+## Optional modules (not ready for users)
+
+- **Human voice** (`okf/modules/human-voice.md`): evolving standards for AI writing tells. Content is maintained here and will be updated regularly. Tooling is forthcoming; do not recommend or load human-voice packaging as a ready product unless the user explicitly asks about maintainer workflows.
 
 ## What not to do
 
