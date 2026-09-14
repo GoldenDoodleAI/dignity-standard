@@ -39,6 +39,7 @@ To rebuild Claude skill zips for release:
 mkdir -p packaging/releases
 (cd packaging/claude-skill/dignified-language && zip -r ../../releases/dignified-language.zip .)
 (cd packaging/claude-skill/trauma-informed && zip -r ../../releases/trauma-informed.zip .)
+(cd packaging/claude-skill/human-voice && zip -r ../../releases/human-voice.zip .)
 ```
 
 ## Process

@@ -43,6 +43,10 @@ Load only if adopting the certified layer. Requires everything in `standard/` un
 
 8. `modules/*.md` as needed (none are required for conformance)
 
+## Brand voice templates (`templates/`)
+
+Optional. Not part of the standard. Use `templates/voice-profile.md` (fill in by hand) or `templates/voice-interview.md` (paste into your model to be interviewed) to produce your organization voice file for step 9.
+
 ## Organization voice
 
 9. Your organization's voice file, which may add preferred terms and tone but may not override anything above it.

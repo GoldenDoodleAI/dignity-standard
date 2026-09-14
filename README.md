@@ -84,6 +84,7 @@ okf/
     rules/             Fundraising and storytelling rules
     protocols/         Crisis protocol
   modules/             Optional add-ons (human voice standards)
+  templates/           Brand voice templates (profile blank + interview megaprompt)
 packaging/             Ready-to-load versions for each platform
 tests/                 Golden prompts and the scoring rubric
 scripts/               Build script that renders packaging/compiled/
