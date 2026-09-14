@@ -18,19 +18,39 @@ There are two entry points:
 
 The base is a subset of the Trauma-Informed layer, not a lighter version of it. If you adopt Trauma-Informed, you have adopted the base.
 
-## Quick start
+## Which one do I need?
 
-Pick your platform and copy one folder.
+If the people you serve or represent have been affected by trauma (a shelter, a DV program, a foster care nonprofit), use the **Trauma-Informed layer**. It includes the base standard automatically. If they haven't (a professional association, a trade group, a policy shop), the **Dignified Language Standard** on its own is enough. Everything below has two versions; pick one.
 
-| Platform | What to use |
-|---|---|
-| Claude (Projects, Skills, Claude Code) | `packaging/claude-skill/dignified-language/` or `packaging/claude-skill/trauma-informed/` |
-| ChatGPT (custom GPT, Project instructions) | `packaging/chatgpt/` |
-| Gemini (Gems) | `packaging/gemini/` |
-| Any agent or RAG pipeline | `okf/` (the raw bundle) |
-| One file, no folders | `packaging/compiled/` |
+## Connecting this to your AI tools
 
-Full instructions in [SETUP.md](SETUP.md).
+### Claude (claude.ai)
+
+1. In this repo, open `packaging/claude-skill/dignified-language/` or `packaging/claude-skill/trauma-informed/`. Download the folder (both files inside: `SKILL.md` and `standard.md`) as a zip.
+2. In Claude, go to **Settings → Customize → Skills**. If Code execution and File creation aren't already on, turn them on first; skills won't run without them.
+3. Click **Add**, then **Upload a skill**, and select the zip.
+4. Toggle it on. Claude will apply the standard automatically to writing about the people you serve, or you can invoke it directly: "use the dignified language skill."
+
+Faster option, if your Claude has web browsing and file creation on: just tell it directly. "Go to https://github.com/GoldenDoodleAI/dignity-standard and set up the Trauma-Informed skill for me." Claude fetches the files and hands you a button to save it; no zip download needed.
+
+On a Claude Team or Enterprise plan, an admin can provision this for the whole organization at once under **Organization settings → Skills**, so nobody has to install it individually.
+
+### ChatGPT
+
+1. Create a Project.
+2. Open the project's settings and paste the contents of `packaging/chatgpt/dignified-language.md` or `trauma-informed.md` into the project instructions field.
+3. If your sector has its own vocabulary file under `okf/standard/vocabulary/` (housing, disability, substance use, mental health), upload it too as a project file.
+
+(Custom GPTs are not the recommended path here. OpenAI has stopped new GPT creation for personal accounts and is retiring the feature entirely through the rest of 2026. Projects is the stable option.)
+
+### Gemini
+
+1. Create a Gem.
+2. Paste `packaging/gemini/dignified-language.md` or `trauma-informed.md` as its instructions.
+
+### Any other agent or RAG pipeline
+
+Point it at the `okf/` folder directly. `okf/index.md` gives the load order.
 
 ## Repository layout
 
