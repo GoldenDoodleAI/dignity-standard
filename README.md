@@ -21,7 +21,15 @@ Per-model packaging files are intentionally separate. They may drift slightly in
 
 **Agents already at this repo:** load `packaging/compiled/dignified-language.md` or `packaging/compiled/trauma-informed.md`, or walk `okf/` using [okf/load-order.md](okf/load-order.md). Do not run setup or git publish steps.
 
-Model behavior changes with each release. Before choosing a model, check the monthly bench in [MODELS.md](MODELS.md).
+Model behavior changes with each release. Before choosing a model, check [MODELS.md](MODELS.md) for the current roster.
+
+### How the standard is tested
+
+Every week, the standard is run against a fixed set of 45 writing prompts on the current production models from each major vendor and the leading open-weight models. Each prompt runs three ways: with no standard loaded, with the Dignified Language base, and with the Trauma-Informed layer on top. Outputs are scored by a three-family judge panel against the rule files in this repo, with human calibration on every run.
+
+The prompt set is in `tests/prompts/`. The bench, the judge configuration, and the full methodology (including known limitations and every source behind the design choices) are in the bench repo: https://github.com/GoldenDoodleAI/test-bench. Raw outputs and judge verdicts are published with each report so anyone can regrade.
+
+Results from the first four weekly runs are a calibration series and are not published as findings.
 
 ## What this is
 
@@ -95,7 +103,7 @@ scripts/               Build script that renders packaging/
 
 ## Model behavior
 
-Instructions land differently across models and change with each release. We run the prompts in `tests/` against current models monthly and publish results in [MODELS.md](MODELS.md). If you are choosing a model to run this standard on, read that first.
+Instructions land differently across models and change with each release. See [How the standard is tested](#how-the-standard-is-tested) for the weekly bench and [MODELS.md](MODELS.md) for the current model roster. If you are choosing a model to run this standard on, read both.
 
 ## Contributing
 
