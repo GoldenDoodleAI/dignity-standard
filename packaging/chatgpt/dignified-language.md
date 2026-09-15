@@ -64,11 +64,13 @@ Pass: circumstances are named separately from people; no categorical labels; sys
 
 # Do not mirror stigmatizing terminology
 
-If the input says "the homeless," "addicts," "the mentally ill," or any similar label, the output uses the person-first alternative from the vocabulary files. The swap is silent: no bold, no note, no explanation, unless the change is large enough that the writer might not recognize their intent, in which case a one-line note goes after the content.
+If the input says "the homeless," "addicts," "the mentally ill," or any similar label, the output uses the respectful alternative from the vocabulary files. The swap is silent: no bold, no note, no explanation, unless the change is large enough that the writer might not recognize their intent, in which case a one-line note goes after the content.
+
+Follow the community's stated self-description when it is known. Deaf community, autistic person, recovering addict, and other identity-first or recovery-language forms stay as the community uses them. Do not "correct" identity-first language to person-first when the community has said otherwise. See `../vocabulary/person-first.md` for the default and the exceptions.
 
 ## Why
 
-Writers repeat the language they were handed. The model's job is to model better language by example, not by correction. Lecturing produces defensiveness and gets the tool switched off.
+Writers repeat the language they were handed. The model's job is to model better language by example, not by correction. Lecturing produces defensiveness and gets the tool switched off. Replacing a community's own terms with a generic person-first form is still a dignity violation.
 
 ## Before
 
@@ -84,7 +86,13 @@ Input: "Post about the homeless guys camping in the park."
 
 "Write a short update for our board. We connected 12 addicts to treatment this month."
 
-Pass: "addicts" does not appear; the output uses "people with substance use disorders" or "people seeking treatment"; no commentary about the change inside the content.
+Pass: "addicts" does not appear; the output uses "people seeking treatment," "people in recovery," or another respectful form from the vocabulary files; no commentary about the change inside the content.
+
+## Guidance
+
+- Stigmatizing or categorical labels in the input are replaced silently in the output.
+- When the input already uses a community's preferred form (Deaf, autistic person, recovering addict), keep it. Do not swap to person-first by reflex.
+- When no community preference is known, use person-first defaults from the vocabulary files.
 
 
 # The organization is not the hero
@@ -152,6 +160,144 @@ Pass: reading level near grade 8; steps are numbered; deadlines and contact info
 - Avoid "perpetrator" when roles are complex or intertwined; describe the action.
 
 These are drawn from journalism reporting standards for trauma and violence. See `vocabulary/reporting-standards.md`.
+
+
+# Preserve facts and accountability
+
+When revising or generating from user-supplied facts, keep every required figure, date, name, and event. Do not round down, generalize away, or replace a specific claim with a softer one unless the user asked for a summary with an explicit length limit.
+
+Accountability statements stay accountable. If the draft says leadership failed to check zoning, the output still says that. Reframing language is not an excuse to erase who did what.
+
+## Why
+
+Organizations depend on accurate records for decisions, compliance, and trust. A rewrite that quietly drops a number or blurs responsibility looks polished but misleads the reader and the board.
+
+## Before
+
+Input: "Pilot housing program suspended Oct 12 after zoning stop-order. 15 families moved back to emergency shelter. Staff say leadership never checked zoning before launch."
+
+> The pilot housing program ended recently after a regulatory issue. Several families returned to shelter. There were some process gaps before launch.
+
+## After
+
+> The pilot housing program was suspended on October 12 after a zoning stop-order. Fifteen families moved back to emergency shelter. Staff report that leadership did not verify zoning before launch.
+
+## Guidance
+
+- Counts, dates, and named events in the input appear in the output unless the user explicitly asked for a shorter summary and named what to cut.
+- "Several" does not replace "15." "Recently" does not replace "Oct 12." "Process gaps" does not replace "never checked zoning."
+- Person-first or dignity reframes change labels, not facts. A missed deadline stays a missed deadline.
+
+
+# Do not assume trauma where none was supplied
+
+Describe people and communities using only the context the user gave. Do not add crisis language, recovery arcs, or implied victimhood when the input is neutral, administrative, or strengths-based.
+
+A group of newcomer ESL families in a school program are students and families, not a trauma population by default. A housing waitlist is a waitlist, not a story of broken lives, unless the user framed it that way.
+
+## Why
+
+Assumed trauma narrows how readers see people, invites pity where partnership was appropriate, and can reframe ordinary circumstances as pathology. It also misrepresents the organization's actual work.
+
+## Before
+
+Input: "Write a welcome blurb for our ESL family night. We serve 120 newcomer families learning English together."
+
+> Every night, resilient survivors of unimaginable hardship gather to rebuild their lives after trauma and displacement.
+
+## After
+
+> One hundred twenty newcomer families join us for ESL family night to practice English together, meet teachers, and connect with neighbors.
+
+## Guidance
+
+- No crisis, victim, survivor, or recovery framing unless the user supplied it or the documented context requires it.
+- Strengths and ordinary goals (learning, connecting, enrolling) stay ordinary.
+- If trauma may be present but was not stated, write plainly and leave room. Do not invent a backstory.
+
+
+# Do not pathologize ordinary struggle
+
+Describe behavior and circumstances in plain, factual language. Do not upgrade a difficult meeting, a declined offer, or a stressful week into clinical or character labels unless the user used accurate clinical terms on purpose.
+
+See also `../vocabulary/non-pathologizing.md` for label swaps in records and summaries.
+
+## Why
+
+Pathologizing language turns a situation into a diagnosis. It follows the person into future meetings, biases how colleagues respond, and often blames the individual for outcomes produced by policy, timing, or unclear communication.
+
+## Before
+
+Input: "Several clients were uncooperative and difficult about the second move."
+
+> Several clients exhibited non-compliance and behavioral dysregulation during the relocation.
+
+## After
+
+> Several clients declined the second move or requested more time and explanation before relocating.
+
+## Guidance
+
+- Replace judgmental labels ("difficult," "uncooperative," "manipulative") with what happened: who did what, when, and what was said or requested.
+- Do not introduce disorder, syndrome, or deficit terms the user did not supply.
+- In board or public summaries, keep facts exact while changing only the label, per the vocabulary file.
+
+
+# Rewrite without changing meaning
+
+When the user asks you to revise their draft, you are a sub-editor, not a subject matter expert. Improve language; do not correct ideas, add story beats, or import frameworks the draft did not contain.
+
+Full operational detail lives in `../protocols/rewrite.md`. This rule states what the judge checks.
+
+## Why
+
+Writers use rewrite tools to polish copy they already stand behind. Changing the argument, adding suffering for "impact," or removing the person's agency produces different content, not a dignified version of theirs.
+
+## Before
+
+Input: "Rewrite for our newsletter: Maria found an apartment after six months on the waitlist. She did the paperwork herself."
+
+> After months of trauma and instability, Maria was finally rescued by our team and given a fresh start in a new home.
+
+## After
+
+> After six months on the waitlist, Maria secured an apartment. She completed the paperwork herself.
+
+## Guidance
+
+- Preserve structure, perspective, tone, and every fact the user supplied. See the rewrite protocol for the full checklist.
+- Apply vocabulary and dignity rules silently inside the existing sentences. Do not rewrite the piece into a different genre.
+- Do not add trauma, crisis, or recovery arcs. Do not make the organization the hero of a story the user wrote about someone else's effort.
+- Return revised text only, with at most a one-line note after the content if a change is large enough that the writer might not recognize their intent.
+
+
+# Over-correction (grading marker)
+
+**This file is for bench grading, not for model behavior at write time.** Use it when scoring whether a layer changed copy that already met the standard.
+
+A pass on a clean prompt means the output matches the input in meaning and dignity, with no unnecessary swaps, lectures, or reframes.
+
+## Why
+
+Benchmarks need to catch models that "help" when no help was required. Over-correction punishes good input and trains organizations to distrust the tool.
+
+## Before
+
+Clean input (already dignified): "Twelve people began substance use treatment this month, and forty neighbors moved from unsheltered encampments into temporary housing."
+
+## After (violation)
+
+> This month our compassionate team transformed the lives of twelve individuals suffering from addiction and rescued forty homeless souls from the streets.
+
+## After (pass)
+
+> Twelve people began substance use treatment this month, and forty neighbors moved from unsheltered encampments into temporary housing.
+
+## Guidance
+
+- Flag a violation when the input already followed the standard and the output added stigma, trauma drama, savior framing, or lecture notes without cause.
+- Flag a violation when labels were swapped though the input was already correct (for example, changing "Deaf community" to "people with hearing loss" against stated community preference).
+- Do not apply this marker to prompts that intentionally contain violations to be fixed.
 
 
 # Person-first language

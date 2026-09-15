@@ -17,6 +17,11 @@ Follow this sequence when loading the bundle into an agent, RAG pipeline, or com
    - `organization-as-hero.md`
    - `cognitive-accessibility.md`
    - `style-basics.md`
+   - `fact-preservation.md`
+   - `trauma-assumption.md`
+   - `non-pathologizing.md`
+   - `rewrite.md`
+   - `over-correction.md`
 3. `standard/vocabulary/*.md` (only the sector files that apply):
    - `person-first.md`
    - `housing.md`
@@ -37,6 +42,8 @@ Load only if adopting the certified layer. Requires everything in `standard/` un
    - `trauma-exploitation-storytelling.md`
    - `savior-framing.md`
    - `donor-audience-rationalization.md`
+   - `identifiability-consent.md`
+   - `crisis.md`
 7. `trauma-informed/protocols/crisis.md`
 
 ## Optional modules (`modules/`)

@@ -35,6 +35,11 @@ BASE_ORDER = [
     "standard/rules/organization-as-hero.md",
     "standard/rules/cognitive-accessibility.md",
     "standard/rules/style-basics.md",
+    "standard/rules/fact-preservation.md",
+    "standard/rules/trauma-assumption.md",
+    "standard/rules/non-pathologizing.md",
+    "standard/rules/rewrite.md",
+    "standard/rules/over-correction.md",
     "standard/vocabulary/person-first.md",
     "standard/vocabulary/housing.md",
     "standard/vocabulary/substance-use.md",
@@ -52,6 +57,8 @@ TI_ORDER = [
     "trauma-informed/rules/trauma-exploitation-storytelling.md",
     "trauma-informed/rules/savior-framing.md",
     "trauma-informed/rules/donor-audience-rationalization.md",
+    "trauma-informed/rules/identifiability-consent.md",
+    "trauma-informed/rules/crisis.md",
     "trauma-informed/protocols/crisis.md",
 ]
 
