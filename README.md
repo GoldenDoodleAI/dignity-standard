@@ -39,7 +39,7 @@ It is a directory of markdown files with YAML frontmatter, following the [Open K
 
 There are two entry points:
 
-**The Dignified Language Standard** (`okf/standard/`) is the base. Person-first language, no deficit framing, the organization is never the hero, plain language by default, and reporting standards for sensitive topics. Any organization that cares how it speaks about people can adopt it. A medical association, a housing coalition, and a trade group can all run on it.
+**The Dignified Language Standard** (`okf/standard/`) is the base. Person-first language, no deficit framing, the organization is never the hero, plain language by default, and reporting standards for sensitive topics drawn from the Dart Center for Journalism and Trauma's practice on trauma reporting and storytelling. Any organization that cares how it speaks about people can adopt it. A medical association, a housing coalition, and a trade group can all run on it.
 
 **The Trauma-Informed layer** (`okf/trauma-informed/`) sits on top of the base and requires it. It adds SAMHSA's Four R's and Six Principles, four additional rules aimed at fundraising and storytelling, and a Crisis protocol. It is written for organizations serving people affected by trauma and for the communicators who work alongside them.
 
