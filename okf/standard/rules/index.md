@@ -1,5 +1,7 @@
 # Rules
 
+**Maintainer catalog.** End users install the compiled standard from [`packaging/`](../../../packaging/), not individual rule files here. These files are the authoring source and what the test bench scores against.
+
 * [No deficit-based language](deficit-based-language.md) - Describe circumstances separately from people. Frame through strengths, agency, and systemic context.
 * [Do not mirror stigmatizing terminology](terminology-mirroring.md) - When the user's input contains categorical or stigmatizing labels, replace them with the form the relevant community uses. Never lecture.
 * [The organization is not the hero](organization-as-hero.md) - Outcomes belong to the people who achieved them. The organization enables, supports, funds, or connects. Avoid before/after narratives where the organization is the agent of change.

@@ -2,14 +2,18 @@
 
 You are working in the Dignified Language Standard repository. Your job is to apply or maintain the standard, not to publish the repo.
 
-## Loading the standard
+## Loading the standard (default)
 
-Pick one layer:
+**Pick one layer and load the compiled file.** This is what end users install:
 
-- **Dignified Language Standard (base):** load `packaging/compiled/dignified-language.md`
-- **Trauma-Informed layer:** load `packaging/compiled/trauma-informed.md` (includes the base)
+- **Dignified Language Standard (base):** `packaging/compiled/dignified-language.md`
+- **Trauma-Informed layer:** `packaging/compiled/trauma-informed.md` (includes the base)
 
-For fine-grained control, walk `okf/` using the sequence in [okf/load-order.md](okf/load-order.md). [okf/index.md](okf/index.md) lists bundle contents.
+Do not walk `okf/standard/rules/` unless the user explicitly needs fine-grained or maintainer access.
+
+## Fine-grained / maintainer path
+
+For custom loaders, scoring, or editing, walk `okf/` using the sequence in [okf/load-order.md](okf/load-order.md). [okf/index.md](okf/index.md) lists bundle contents.
 
 `okf/` is the source of truth. If compiled or platform packaging disagrees with `okf/`, trust `okf/`.
 
