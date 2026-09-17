@@ -4,6 +4,8 @@ okf_version: "0.2"
 
 # Dignified Language Standard
 
+**Install from [`packaging/`](../packaging/), not from individual files here.** This index is the OKF bundle directory for maintainers, custom loaders, and scoring. End users should paste or upload `packaging/compiled/`, `packaging/chatgpt/`, `packaging/gemini/`, or `packaging/releases/` instead.
+
 * [Load order](load-order.md) - Sequencing guidance for any consumer loading the OKF bundle.
 * [log.md](log.md) - Dated changelog for the OKF bundle.
 * [standard/](standard/) - The base standard. Person-first language, no deficit framing, plain language by default, and reporting standards for sensitive topics.
