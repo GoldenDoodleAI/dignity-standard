@@ -10,7 +10,7 @@ Maintained by [GoldenDoodle AI](https://goldendoodleai.com). Editor: Laura Brade
 
 | Path | How to load |
 |---|---|
-| **Claude** | Download a skill zip from `packaging/releases/` (or [GitHub Releases](https://github.com/GoldenDoodleAI/dignity-standard/releases) when published). Upload under Settings → Customize → Skills. Or tell Claude to fetch this repo and set up the skill for you. |
+| **Claude** | Download a skill zip from `packaging/releases/` (or [GitHub Releases](https://github.com/GoldenDoodleAI/dignity-standard/releases) when published). Upload under Settings → Customize → Skills. Or tell Claude to fetch this repo and set up the skill for you. For a guided setup, see [INSTALL.md](INSTALL.md). |
 | **ChatGPT** | Create a Project. Paste `packaging/chatgpt/dignified-language.md` or `trauma-informed.md` into project instructions. Upload sector vocabulary from `okf/standard/vocabulary/` if needed. |
 | **Gemini** | Create a Gem. Paste `packaging/gemini/dignified-language.md` or `trauma-informed.md` as its instructions. |
 | **Compiled (any model)** | Paste `packaging/compiled/dignified-language.md` or `trauma-informed.md` as system context. |
@@ -19,7 +19,7 @@ Maintained by [GoldenDoodle AI](https://goldendoodleai.com). Editor: Laura Brade
 
 Per-model packaging files are intentionally separate. They may drift slightly in preamble or formatting; `okf/` is the source of truth.
 
-**Agents already at this repo:** load `packaging/compiled/dignified-language.md` or `packaging/compiled/trauma-informed.md`, or walk `okf/` using [okf/load-order.md](okf/load-order.md). Do not run setup or git publish steps.
+**Agents already at this repo:** load `packaging/compiled/dignified-language.md` or `packaging/compiled/trauma-informed.md`, or walk `okf/` using [okf/load-order.md](okf/load-order.md). If the user is asking you to set this up in their own AI tool, follow [INSTALL.md](INSTALL.md). Do not run git publish steps.
 
 Model behavior changes with each release. Before choosing a model, check [MODELS.md](MODELS.md) for the current roster.
 
@@ -46,6 +46,8 @@ There are two entry points:
 The base is a subset of the Trauma-Informed layer, not a lighter version of it. If you adopt Trauma-Informed, you have adopted the base.
 
 ## Connecting this to your AI tools
+
+For a conversational install path, paste this repository's URL into your AI tool and say "read this and set it up for me," or follow [INSTALL.md](INSTALL.md).
 
 ### Claude (claude.ai)
 
