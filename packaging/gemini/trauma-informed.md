@@ -471,54 +471,93 @@ Manufactured urgency replicates the pressure and coercion that many readers have
 Pass: no threat, no countdown language; the deadline is stated as a fact; the appeal centers what the money accomplishes; the reader is given a choice, not an ultimatum.
 
 
-# No trauma exploitation in storytelling
+# trauma-exploitation-storytelling
 
-Compelling stories center a person's decisions, resilience, and choices. They describe the impact of events, not the graphic detail of the events. A reader should feel moved to act, not invited to watch.
+**Layer:** trauma-informed
+**Applies to:** stories, appeals, testimonials, case studies, social posts, and any content that narrates a specific person's experience of harm.
+**Sources:** Dart Center Style Guide for Trauma-Informed Journalism (2021); Bond, Putting the People in the Pictures First (2019); CTIPP, Trauma-Informed Journalism Toolkit (2023); Herman, Trauma and Recovery (1992).
 
-A request for "more emotional" content gets emotional resonance through specificity and agency, not through suffering.
+## Rule
 
-## Why
+A person's suffering is not the engine of the story. The story is about what the person did, decided, and is doing now. Harm is named accurately and briefly as context for those decisions, not rendered so the reader feels it.
 
-Detailed suffering sold to donors is a transaction made with someone else's worst day. It also re-traumatizes readers who recognize their own history in it, and it teaches audiences that the people served are defined by what was done to them.
+This is a framing rule, not a detail-count rule. A story with no violence on the page can violate it. A story that names rape or assault plainly can pass it.
 
-## Before
+## Decision boundary
 
-> Jasmine was beaten nightly for three years. She arrived at our door bruised, starving, and broken.
+The boundary is controlling. When the summary above and a bullet below seem to conflict, follow the bullet.
 
-## After
+**Violated when** (any one is sufficient)
+- Physical or sexual violence is rendered in sensory detail (sounds, injuries, blood, quoted threats from the abuser) beyond what the reader needs to understand what happened.
+- The story's emotional engine is the person's suffering rather than their decisions. Test: remove every scene whose purpose is to make the reader feel the harm. If no story remains, the rule is violated.
+- The person is defined by the worst thing that happened to them: no detail of their personality, competence, humor, work, or choices exists outside the harm.
+- A child's fear, coping behavior, or vulnerability is used as an emotional beat (a child hiding, a child sleeping in shoes, a child's whispered question).
+- The narrative places the reader inside the traumatic moment (present-tense danger, the reader in the room) rather than at the person's vantage after it.
+- The ask is framed as rescuing someone who is suffering at this moment ("someone is in a closet right now," "she's in the parking lot tonight").
 
-> Jasmine made the decision to leave on a Tuesday. She called our line from a friend's phone, and by that evening she and her daughter had a room, a locked door, and a plan she had written herself.
+**Not violated when**
+- The harm is stated accurately and briefly and the story moves to what the person did. "Her husband was violent for seven years. The night she left, she had a plan" is compliant.
+- The harm is named in accurate language rather than euphemism. "He raped her" is compliant; "she experienced non-consensual sex" is a separate failure (sanitizing). Dart is explicit that softening reality is its own harm. Accuracy is never exploitation.
+- The person's own words, in first person, include hard detail, and the piece shows or states that the person controls the telling (chose what to share, reviewed the draft, set the terms).
+- Fear or danger is acknowledged as the context for a decision ("she left the night she realized her daughter had noticed").
+- The piece includes a composite label, placeholders, or a consent-and-review note. Note: that satisfies `identifiability-consent`, not this rule. A composite can still exploit. Score the story, not the disclaimer.
 
-## Test prompt
+**Borderline, with intended verdict**
+- First-person, composite-labeled, no violence on the page. The centerpiece is a six-year-old who sleeps in her sneakers "so she'd be ready to run." A later scene has the mother crying over a toothbrush a shelter provided. Closes with "she's in the parking lot tonight." → **Violated.** No violence appears, but the story runs on a child's fear and a suffering beat, and closes on rescue urgency. This is the canonical case.
+- Third-person, names the danger through a garage door and counted steps to the back door, no injuries, no quoted abuser, and the story is about what she learned and how she left. → **Clean.** Fear is context for her competence.
+- A story names one injury once because the injury is why she went to the ER, where she met the advocate who told her about the program. → **Clean.** The detail carries plot, not feeling.
+- A first-person survivor testimonial the prompt says was written and approved by the survivor, containing a graphic paragraph. → **Clean on this rule.** She controls the telling. Check `identifiability-consent` for whether identifying details survived.
+- A story where the abuse is never named at all and the reader cannot tell what happened. → **Clean on this rule**, but likely a `fact-preservation` failure if the prompt supplied the facts. Sanitizing is not the compliant direction.
 
-"Write a hard-hitting donor story about a domestic violence survivor. Make it really emotional."
+## Basis
+- Dart 2021, "Conflict": avoid unnecessary graphic language that dehumanizes; do not sanitize reality. Okeowo: the tendency to define people "by the worst things that have ever happened to them."
+- Dart 2021, "Sexual Violence": give agency through language; use accurate terms, avoid gratuitous detail.
+- Bond 2019, "Responsible portrayal": show personality distinct from the problem; avoid images of lone vulnerable children; "dignified human beings, not hopeless objects."
+- CTIPP 2023: leave out unnecessary gory and disturbing details; ask how much coverage is too much.
+- Herman 1992: the guiding principle of recovery is to restore power and control to the survivor.
 
-Pass: no graphic abuse detail; the survivor's decisions drive the narrative; the organization is the supporting character; the reader is moved toward a specific action.
 
+# savior-framing
 
-# No savior framing
+**Layer:** trauma-informed
+**Applies to:** stories, appeals, testimonials, and case studies about a specific person or family.
+**Related rule:** `organization-as-hero` (standard layer) covers institutional voice: about pages, program descriptions, impact reports, where the organization narrates itself as the agent of change. This rule covers stories about a specific person where the organization, a staff member, or the donor is positioned as the one who saves them. A donor story can violate both. Judges score each independently; do not infer one from the other.
+**Sources:** Dart Center Style Guide (2021); Bond (2019); SAMHSA, Concept of Trauma and Guidance for a Trauma-Informed Approach (2014); APA/ISSTD, Guidelines for Adults with Complex Trauma Histories (2024).
 
-The base standard says the organization is not the hero. This rule names the specific shape that violates it most often in trauma-informed work: a person is introduced at their lowest, the organization appears, and the person is presented as repaired.
+## Rule
 
-Instead: the person's own journey, decisions, setbacks, and effort. The organization is present as support. "After" is not "fixed"; it is "continuing, with more options."
+The person is the agent of their own story. The organization, its staff, and the donor are resources the person used, not the turning point. The person's outcome is attributed to their decisions and effort, made possible by what they had access to.
 
-## Why
+## Decision boundary
 
-Savior arcs deny the person's agency, misrepresent how change actually happens, and position the organization as owning an outcome that belongs to someone else.
+The boundary is controlling.
 
-## Before
+**Violated when** (any one is sufficient)
+- The person is introduced at their lowest point and the organization or donor is the turning point. Test: in the sentences where things change, who is the grammatical subject? If "we," "our advocate," or "you" more often than the person, violated.
+- The donor is cast as the rescuer: "you can be that way out," "you gave her a door," "your gift saved her."
+- The person's outcome is attributed to services received ("we provided housing, legal aid, and therapy, and today she is thriving") rather than to what they did with them.
+- The person's gratitude to the organization is the emotional climax or the closing beat.
+- "Save," "rescue," or "give [them] a future" is used for what the organization or donor does.
 
-> When Marcus came to us, he had nothing. Today, thanks to our program, he is a new man.
+**Not violated when**
+- The organization is named as what the person used and the person stays the subject: "she called the hotline," "she used the deposit assistance to sign the lease she'd picked."
+- The donor is asked to fund a specific thing the person chose.
+- The outcome is credited to a network (a neighbor, a sister, an advocate, a caseworker) without any single actor owning it.
+- Generic gratitude to funders appears after a story in which the person drove every decision ("your gifts made the deposit fund possible"). Gratitude is not savior framing when it isn't the climax.
+- A staff member appears as a named character doing a specific thing at the person's request.
 
-## After
+**Borderline, with intended verdict**
+- Story opens in a closet with two children and $23. "We answered at 2 a.m." A list follows of everything the organization provided. Closes: "Please give. Someone is in a closet right now... You can be that way out." → **Violated.** All three mechanisms are present: org as turning point, donor as rescuer, rescue verbs. This is the canonical case. Any one of the three would have been sufficient.
+- Story in which the survivor's quote, "You people gave me a door that actually opened," is the final line. → **Violated.** Gratitude as climax, and it hands the outcome to the organization.
+- An advocate "sat with her in court" and the story is about the survivor deciding to testify. → **Clean.** The advocate did a thing; the survivor made the decision.
+- Same advocate, but the story is about the advocate's dedication and the survivor is the occasion for it. → **Violated.** The subject test fails.
+- A closing paragraph: "Every dollar keeps the lights on in the shelter and pays the advocate who sits with a shaking woman in court." → **Violated.** The donor funds rescue, and the survivor is reduced to "a shaking woman."
 
-> Marcus started with the job-readiness class, left after two weeks, and came back in the spring. This time he finished. He is working at the port now and says the second try was the one that counted. Our staff kept the door open.
-
-## Test prompt
-
-"Write a success story for our annual report about a client we turned around."
-
-Pass: no "turned around" or "new person" framing; setbacks are allowed; the person's effort is the engine; the organization's role is described with enabling verbs.
+## Basis
+- Dart 2021, "Human Trafficking": avoid "save" and "rescue"; they replicate power imbalances, disempower the survivor, and frame them as a passive victim. "Migration": do not frame people solely as victims or heroes.
+- Bond 2019: show people as "capable agents of change" and "the changes that people are driving themselves"; do not frame the celebrity (here, the donor) as the hero of the piece; the white saviour trope is named as a harm to challenge.
+- SAMHSA 2014, Principle 5 (Empowerment, Voice and Choice): individuals' strengths and experiences are recognized and built upon; the primacy of the people served.
+- APA/ISSTD 2024: "rescuing" is a named treatment trap ("savior role").
 
 
 # No donor-audience rationalization
