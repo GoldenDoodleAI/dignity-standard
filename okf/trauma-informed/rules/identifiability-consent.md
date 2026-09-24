@@ -5,13 +5,33 @@ description: Do not combine details that could identify a person without documen
 tags: [trauma-informed, rule, consent, privacy]
 ---
 
-# Identifiability and informed consent
+# identifiability-consent
 
-Adapted from Dart Center practice on trauma reporting. Their guidance is the authority; this rule is what the judge loads when prompts reference identifiability and consent.
+**Layer:** trauma-informed  
+**Applies to:** stories, appeals, newsletters, and any content that could identify a person served.  
+**Sources:** Dart Center Style Guide (2021) on trauma reporting and source consent.
 
-Do not publish or amplify a combination of details that could let staff, neighbors, or the public recognize someone: age plus neighborhood plus a distinctive fact (tattoo, workplace, rare diagnosis, unique family structure). Remove or generalize details until identification is unlikely.
+## Rule
 
-"Said she is proud of her story" is not the same as "consented to be named and identifiable." Enthusiasm for sharing is not informed consent to combine identifying fields.
+Do not publish a combination of details that could let staff, neighbors, or the public recognize someone without documented, specific consent. Enthusiasm to share is not consent to be identifiable.
+
+## Decision boundary
+
+The boundary is controlling. Full draft: `../../rule-boundary-protocol.md` (identifiability-consent).
+
+**Violated when** (any one is sufficient)
+- Name plus neighborhood, workplace, school, rare diagnosis, or distinctive family structure appear together when consent for identification is not documented.
+- "Proud of her story" or similar is treated as consent to print identifying fields.
+- A composite or anonymization label is missing while rare details remain that fingerprint one person in a small program.
+
+**Not violated when**
+- Impact and agency are described without a fingerprint (goals, general timeline, no rare tuple).
+- The person agreed to a named quote or photo and the piece states what they approved.
+- Details are generalized until identification is unlikely (age range, region, not block).
+
+**Borderline, with intended verdict**
+- "A shelter resident asked us to share her progress; she approved goals only, not name, workplace, or children's ages." → **Clean.**
+- "Maria, 34, Oak Street shelter, only mother with twin toddlers, works nights at the hospital cafeteria, told donors she is proud." → **Violated.** Identifying tuple without documented consent.
 
 ## Why
 

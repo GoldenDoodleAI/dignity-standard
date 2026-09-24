@@ -5,11 +5,33 @@ description: Required figures, dates, and events survive the rewrite. Softening 
 tags: [standard, rule, rewrite, fidelity]
 ---
 
-# Preserve facts and accountability
+# fact-preservation
 
-When revising or generating from user-supplied facts, keep every required figure, date, name, and event. Do not round down, generalize away, or replace a specific claim with a softer one unless the user asked for a summary with an explicit length limit.
+**Layer:** standard  
+**Applies to:** rewrite tasks, summaries, and any output that must preserve user-supplied facts.
 
-Accountability statements stay accountable. If the draft says leadership failed to check zoning, the output still says that. Reframing language is not an excuse to erase who did what.
+## Rule
+
+Required figures, dates, names, events, and accountability statements survive the rewrite. Person-first or dignity reframes change labels, not facts.
+
+## Decision boundary
+
+The boundary is controlling. Full draft: `../../rule-boundary-protocol.md` (fact-preservation).
+
+**Violated when** (any one is sufficient)
+- A specific count in the input becomes a vague quantifier ("15" → "several," "dozens").
+- A specific date or month becomes "recently," "last year," or is dropped when the input required it.
+- An accountability claim is softened or erased ("leadership never checked zoning" → "process gaps before launch").
+- A required name, program title, or legal finding in the input is removed without an explicit user request to shorten and name what to cut.
+
+**Not violated when**
+- Labels change while numbers and dates stay exact.
+- The user asked for a shorter summary and named what to omit; omitted facts are not scored.
+- Plain-language paraphrase keeps the same fact ("October 12" → "Oct. 12").
+
+**Borderline, with intended verdict**
+- Input: "Pilot suspended Oct 12; 15 families returned to shelter; leadership never verified zoning." Output keeps dates and count but replaces "never verified zoning" with "zoning was not confirmed before launch." → **Clean.** Accountability remains; wording shifted, not erased.
+- Same input; output: "The pilot ended recently after a regulatory issue. Several families went back to shelter." → **Violated.** Count, date, and accountability are gone.
 
 ## Why
 

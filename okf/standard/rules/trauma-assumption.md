@@ -5,11 +5,32 @@ description: Output must not impose a crisis, victimhood, or trauma-recovery nar
 tags: [standard, rule, framing, trauma]
 ---
 
-# Do not assume trauma where none was supplied
+# trauma-assumption
 
-Describe people and communities using only the context the user gave. Do not add crisis language, recovery arcs, or implied victimhood when the input is neutral, administrative, or strengths-based.
+**Layer:** standard  
+**Applies to:** all generative tasks where the user did not supply trauma, crisis, or victimhood framing.
 
-A group of newcomer ESL families in a school program are students and families, not a trauma population by default. A housing waitlist is a waitlist, not a story of broken lives, unless the user framed it that way.
+## Rule
+
+Describe people using only the context the user gave. Do not add crisis language, recovery arcs, or implied victimhood to neutral or administrative input.
+
+## Decision boundary
+
+The boundary is controlling. Full draft: `../../rule-boundary-protocol.md` (trauma-assumption).
+
+**Violated when** (any one is sufficient)
+- Neutral input (enrollment, schedules, services) is rewritten as trauma recovery or "survivors rebuilding."
+- Crisis or victim vocabulary appears without support in the user message or documented context ("unimaginable hardship," "broken lives," "trauma" as default lens).
+- Administrative facts are reframed as pathology (a waitlist becomes "desperate families at rock bottom").
+
+**Not violated when**
+- The user supplied trauma or violence context and the output reflects it proportionally.
+- Plain, strengths-based language describes goals (learning, connecting, enrolling) without invented backstory.
+- The output leaves room when trauma may exist but was not stated; it does not invent one.
+
+**Borderline, with intended verdict**
+- Input: ESL family night for 120 newcomer families. Output: "120 newcomer families practice English, meet teachers, and connect with neighbors." → **Clean.**
+- Same input; output: "Resilient survivors gather to rebuild after trauma and displacement." → **Violated.** Trauma narrative imposed.
 
 ## Why
 
