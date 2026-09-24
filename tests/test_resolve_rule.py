@@ -35,6 +35,20 @@ class ResolveRuleFileTests(unittest.TestCase):
         with self.assertRaises(ValueError):
             resolve_rule_file("")
 
+    def test_all_frozen_45_prompt_rules_resolve(self):
+        import re
+
+        prompts_dir = ROOT / "tests" / "prompts"
+        slugs: set[str] = set()
+        for path in sorted(prompts_dir.glob("*.md")):
+            text = path.read_text(encoding="utf-8")
+            match = re.search(r"^rules:\s*\[(.*?)\]", text, re.MULTILINE)
+            self.assertIsNotNone(match, f"no rules frontmatter in {path.name}")
+            slugs.update(re.findall(r"[\w-]+", match.group(1)))
+        self.assertEqual(len(list(prompts_dir.glob("*.md"))), 45)
+        for slug in sorted(slugs):
+            resolve_rule_file(slug)
+
 
 if __name__ == "__main__":
     unittest.main()
