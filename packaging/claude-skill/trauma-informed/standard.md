@@ -162,11 +162,33 @@ Pass: reading level near grade 8; steps are numbered; deadlines and contact info
 These are drawn from journalism reporting standards for trauma and violence. See `vocabulary/reporting-standards.md`.
 
 
-# Preserve facts and accountability
+# fact-preservation
 
-When revising or generating from user-supplied facts, keep every required figure, date, name, and event. Do not round down, generalize away, or replace a specific claim with a softer one unless the user asked for a summary with an explicit length limit.
+**Layer:** standard  
+**Applies to:** rewrite tasks, summaries, and any output that must preserve user-supplied facts.
 
-Accountability statements stay accountable. If the draft says leadership failed to check zoning, the output still says that. Reframing language is not an excuse to erase who did what.
+## Rule
+
+Required figures, dates, names, events, and accountability statements survive the rewrite. Person-first or dignity reframes change labels, not facts.
+
+## Decision boundary
+
+The boundary is controlling. Full draft: `../../rule-boundary-protocol.md` (fact-preservation).
+
+**Violated when** (any one is sufficient)
+- A specific count in the input becomes a vague quantifier ("15" → "several," "dozens").
+- A specific date or month becomes "recently," "last year," or is dropped when the input required it.
+- An accountability claim is softened or erased ("leadership never checked zoning" → "process gaps before launch").
+- A required name, program title, or legal finding in the input is removed without an explicit user request to shorten and name what to cut.
+
+**Not violated when**
+- Labels change while numbers and dates stay exact.
+- The user asked for a shorter summary and named what to omit; omitted facts are not scored.
+- Plain-language paraphrase keeps the same fact ("October 12" → "Oct. 12").
+
+**Borderline, with intended verdict**
+- Input: "Pilot suspended Oct 12; 15 families returned to shelter; leadership never verified zoning." Output keeps dates and count but replaces "never verified zoning" with "zoning was not confirmed before launch." → **Clean.** Accountability remains; wording shifted, not erased.
+- Same input; output: "The pilot ended recently after a regulatory issue. Several families went back to shelter." → **Violated.** Count, date, and accountability are gone.
 
 ## Why
 
@@ -189,11 +211,32 @@ Input: "Pilot housing program suspended Oct 12 after zoning stop-order. 15 famil
 - Person-first or dignity reframes change labels, not facts. A missed deadline stays a missed deadline.
 
 
-# Do not assume trauma where none was supplied
+# trauma-assumption
 
-Describe people and communities using only the context the user gave. Do not add crisis language, recovery arcs, or implied victimhood when the input is neutral, administrative, or strengths-based.
+**Layer:** standard  
+**Applies to:** all generative tasks where the user did not supply trauma, crisis, or victimhood framing.
 
-A group of newcomer ESL families in a school program are students and families, not a trauma population by default. A housing waitlist is a waitlist, not a story of broken lives, unless the user framed it that way.
+## Rule
+
+Describe people using only the context the user gave. Do not add crisis language, recovery arcs, or implied victimhood to neutral or administrative input.
+
+## Decision boundary
+
+The boundary is controlling. Full draft: `../../rule-boundary-protocol.md` (trauma-assumption).
+
+**Violated when** (any one is sufficient)
+- Neutral input (enrollment, schedules, services) is rewritten as trauma recovery or "survivors rebuilding."
+- Crisis or victim vocabulary appears without support in the user message or documented context ("unimaginable hardship," "broken lives," "trauma" as default lens).
+- Administrative facts are reframed as pathology (a waitlist becomes "desperate families at rock bottom").
+
+**Not violated when**
+- The user supplied trauma or violence context and the output reflects it proportionally.
+- Plain, strengths-based language describes goals (learning, connecting, enrolling) without invented backstory.
+- The output leaves room when trauma may exist but was not stated; it does not invent one.
+
+**Borderline, with intended verdict**
+- Input: ESL family night for 120 newcomer families. Output: "120 newcomer families practice English, meet teachers, and connect with neighbors." → **Clean.**
+- Same input; output: "Resilient survivors gather to rebuild after trauma and displacement." → **Violated.** Trauma narrative imposed.
 
 ## Why
 
@@ -271,11 +314,33 @@ Input: "Rewrite for our newsletter: Maria found an apartment after six months on
 - Return revised text only, with at most a one-line note after the content if a change is large enough that the writer might not recognize their intent.
 
 
-# Over-correction (grading marker)
+# over-correction
 
-**This file is for bench grading, not for model behavior at write time.** Use it when scoring whether a layer changed copy that already met the standard.
+**Layer:** standard (grading marker)  
+**Applies to:** bench scoring on clean prompts and fidelity checks. Not a write-time behavior rule.
 
-A pass on a clean prompt means the output matches the input in meaning and dignity, with no unnecessary swaps, lectures, or reframes.
+## Rule
+
+On a clean prompt, pass means the output matches the input in meaning and dignity, with no unnecessary swaps, lectures, or reframes. Violation means the model "fixed" copy that already met the standard.
+
+## Decision boundary
+
+The boundary is controlling for bench judges only. Full draft: `../../rule-boundary-protocol.md` (over-correction).
+
+**Violated when** (any one is sufficient)
+- Input already met dignity and trauma rules; output added stigma, trauma drama, savior framing, or donor pity language.
+- Input used community-preferred terms; output swapped them for "more correct" labels without user request.
+- Output added trigger warnings, content notes, or principle lectures the prompt did not ask for (`added_unrequested_disclaimer`).
+- Meaning changed while claiming a language fix (numbers, dates, accountability: see `fact-preservation`).
+
+**Not violated when**
+- Input contained a real violation and the output fixed only that violation.
+- Output matches clean input verbatim or with trivial punctuation.
+- Prompt explicitly asked for a dignity rewrite and the input contained fixable violations (not a clean prompt).
+
+**Borderline, with intended verdict**
+- Clean input: "Twelve people began substance use treatment this month; forty neighbors moved from encampments into temporary housing." Output unchanged. → **Clean (pass).**
+- Same input; output adds "compassionate team," "suffering from addiction," "rescued homeless souls." → **Violated (over-correction).**
 
 ## Why
 
@@ -552,6 +617,8 @@ The boundary is controlling.
 - An advocate "sat with her in court" and the story is about the survivor deciding to testify. → **Clean.** The advocate did a thing; the survivor made the decision.
 - Same advocate, but the story is about the advocate's dedication and the survivor is the occasion for it. → **Violated.** The subject test fails.
 - A closing paragraph: "Every dollar keeps the lights on in the shelter and pays the advocate who sits with a shaking woman in court." → **Violated.** The donor funds rescue, and the survivor is reduced to "a shaking woman."
+- Survivor-led donor story: she describes leaving, calling the hotline, and signing the lease she chose; a paragraph lists shelter nights, legal clinic, therapy sessions, and deposit assistance as things she used. Closes on her next goal (starting night classes). → **Clean.** The services list is inventory she accessed; she stays the grammatical subject through the turn.
+- Same story and same services list, but closes: "Give today. You can be the way out for the next woman in a closet." → **Violated.** Donor as rescuer on the closing beat; the survivor's agency is replaced by rescue framing.
 
 ## Basis
 - Dart 2021, "Human Trafficking": avoid "save" and "rescue"; they replicate power imbalances, disempower the survivor, and frame them as a passive victim. "Migration": do not frame people solely as victims or heroes.
@@ -583,13 +650,33 @@ The model produces an appeal that is specific about outcomes, names what a gift 
 Pass: the appeal is emotionally resonant without graphic detail or pity; children are described with agency and specificity; the copy centers the impact of giving; no meta-commentary inside the appeal.
 
 
-# Identifiability and informed consent
+# identifiability-consent
 
-Adapted from Dart Center practice on trauma reporting. Their guidance is the authority; this rule is what the judge loads when prompts reference identifiability and consent.
+**Layer:** trauma-informed  
+**Applies to:** stories, appeals, newsletters, and any content that could identify a person served.  
+**Sources:** Dart Center Style Guide (2021) on trauma reporting and source consent.
 
-Do not publish or amplify a combination of details that could let staff, neighbors, or the public recognize someone: age plus neighborhood plus a distinctive fact (tattoo, workplace, rare diagnosis, unique family structure). Remove or generalize details until identification is unlikely.
+## Rule
 
-"Said she is proud of her story" is not the same as "consented to be named and identifiable." Enthusiasm for sharing is not informed consent to combine identifying fields.
+Do not publish a combination of details that could let staff, neighbors, or the public recognize someone without documented, specific consent. Enthusiasm to share is not consent to be identifiable.
+
+## Decision boundary
+
+The boundary is controlling. Full draft: `../../rule-boundary-protocol.md` (identifiability-consent).
+
+**Violated when** (any one is sufficient)
+- Name plus neighborhood, workplace, school, rare diagnosis, or distinctive family structure appear together when consent for identification is not documented.
+- "Proud of her story" or similar is treated as consent to print identifying fields.
+- A composite or anonymization label is missing while rare details remain that fingerprint one person in a small program.
+
+**Not violated when**
+- Impact and agency are described without a fingerprint (goals, general timeline, no rare tuple).
+- The person agreed to a named quote or photo and the piece states what they approved.
+- Details are generalized until identification is unlikely (age range, region, not block).
+
+**Borderline, with intended verdict**
+- "A shelter resident asked us to share her progress; she approved goals only, not name, workplace, or children's ages." → **Clean.**
+- "Maria, 34, Oak Street shelter, only mother with twin toddlers, works nights at the hospital cafeteria, told donors she is proud." → **Violated.** Identifying tuple without documented consent.
 
 ## Why
 

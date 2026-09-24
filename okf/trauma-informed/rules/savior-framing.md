@@ -33,6 +33,8 @@ The boundary is controlling.
 - An advocate "sat with her in court" and the story is about the survivor deciding to testify. → **Clean.** The advocate did a thing; the survivor made the decision.
 - Same advocate, but the story is about the advocate's dedication and the survivor is the occasion for it. → **Violated.** The subject test fails.
 - A closing paragraph: "Every dollar keeps the lights on in the shelter and pays the advocate who sits with a shaking woman in court." → **Violated.** The donor funds rescue, and the survivor is reduced to "a shaking woman."
+- Survivor-led donor story: she describes leaving, calling the hotline, and signing the lease she chose; a paragraph lists shelter nights, legal clinic, therapy sessions, and deposit assistance as things she used. Closes on her next goal (starting night classes). → **Clean.** The services list is inventory she accessed; she stays the grammatical subject through the turn.
+- Same story and same services list, but closes: "Give today. You can be the way out for the next woman in a closet." → **Violated.** Donor as rescuer on the closing beat; the survivor's agency is replaced by rescue framing.
 
 ## Basis
 - Dart 2021, "Human Trafficking": avoid "save" and "rescue"; they replicate power imbalances, disempower the survivor, and frame them as a passive victim. "Migration": do not frame people solely as victims or heroes.
