@@ -16,3 +16,5 @@ jobs:
           python-version: "3.x"
       - name: Verify compiled packaging is up to date
         run: python3 scripts/build.py --check
+      - name: Rule file resolution tests
+        run: python3 -m unittest tests/test_resolve_rule.py -v
