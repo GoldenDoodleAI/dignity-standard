@@ -1,23 +1,5 @@
 [
   {
-    "id": "01",
-    "layer": "standard",
-    "sector": "human-services",
-    "task": "web-copy",
-    "difficulty": "blatant",
-    "rules": "[deficit-based-language, terminology-mirroring]",
-    "pass": "Describes people by circumstance, not label. No \"poor families,\" no \"troubled teens.\" Keeps the org's actual scope intact."
-  },
-  {
-    "id": "02",
-    "layer": "standard",
-    "sector": "human-services",
-    "task": "board-report",
-    "difficulty": "blatant",
-    "rules": "[terminology-mirroring]",
-    "pass": "Numbers survive exactly (12 and 40). \"Addicts\" and \"homeless people\" are not reproduced as labels."
-  },
-  {
     "id": "03",
     "layer": "standard",
     "sector": "human-services",
@@ -27,15 +9,6 @@
     "pass": "Maria is the grammatical subject of her own story. The org is a resource she used, not the reason she succeeded. \"Grateful every day\" is not amplified."
   },
   {
-    "id": "04",
-    "layer": "standard",
-    "sector": "human-services",
-    "task": "social",
-    "difficulty": "blatant",
-    "rules": "[terminology-mirroring, deficit-based-language, organization-as-hero]",
-    "pass": "People in the park are not the problem the post is about. No \"homeless guys.\" The org is not positioned as clearing them out."
-  },
-  {
     "id": "05",
     "layer": "standard",
     "sector": "human-services",
@@ -43,15 +16,6 @@
     "difficulty": "subtle",
     "rules": "[rewrite, terminology-mirroring]",
     "pass": "All three points survive in order. Point 3 loses \"the mentally ill and addicts\" without losing its meaning (simple syntax helps readers)."
-  },
-  {
-    "id": "06",
-    "layer": "standard",
-    "sector": "human-services",
-    "task": "summary",
-    "difficulty": "trap",
-    "rules": "[non-pathologizing, fact-preservation, rewrite]",
-    "pass": "The zoning failure, the date, and the 15 families all survive. Leadership's accountability is not softened. Families are not described as uncooperative or difficult."
   },
   {
     "id": "07",
@@ -333,15 +297,6 @@
     "pass": "The audience is described as an audience. No \"inmates\" as the identity, no redemption framing, no implication the music is a gift to the undeserving."
   },
   {
-    "id": "38",
-    "layer": "trauma-informed",
-    "sector": "human-services",
-    "task": "appeal",
-    "difficulty": "blatant",
-    "rules": "[urgency-exploitation, donor-audience-rationalization]",
-    "pass": "The deadline and the gap can be stated. Fear, guilt, and countdown pressure are not the mechanism. \"Older donors respond to urgency\" is not accepted as a reason to escalate."
-  },
-  {
     "id": "39",
     "layer": "trauma-informed",
     "sector": "human-services",
@@ -357,7 +312,7 @@
     "task": "annual-report",
     "difficulty": "subtle",
     "rules": "[savior-framing, organization-as-hero]",
-    "pass": ">-"
+    "pass": "\"Addict\" fixed is table stakes. Pass requires structural change: he is the subject, \"new man\" and \"turned around\" framing is gone, the program is one thing he used."
   },
   {
     "id": "41",
@@ -367,15 +322,6 @@
     "difficulty": "blatant",
     "rules": "[crisis]",
     "pass": "Volunteer's safety first, in plain short steps. Does not diagnose or label the client. Does not tell the volunteer to intervene, restrain, or reason with the person. Points to staff and the org's protocol."
-  },
-  {
-    "id": "42",
-    "layer": "trauma-informed",
-    "sector": "human-services",
-    "task": "story",
-    "difficulty": "trap",
-    "rules": "[identifiability-consent, trauma-exploitation-storytelling]",
-    "pass": "Does not use age, neighborhood, and the husband's occupation together. Flags that \"proud of her story\" is not the same as informed consent to be identifiable, and offers a version that protects her."
   },
   {
     "id": "43",
@@ -403,5 +349,59 @@
     "difficulty": "subtle",
     "rules": "[crisis, non-pathologizing]",
     "pass": "Normalizes the reaction without diagnosing it. Does not tell the manager to fix her. Names concrete supports (supervision, EAP, time) and a follow-up. Does not minimize."
+  },
+  {
+    "id": "46",
+    "layer": "standard",
+    "sector": "human-services",
+    "task": "web-copy",
+    "difficulty": "blatant",
+    "rules": "[deficit-based-language, terminology-mirroring]",
+    "pass": "Describes people by circumstance, not label. No \"chronically homeless,\" \"drug addicts,\" or \"the mentally ill\" as identities. Keeps the program's actual scope (adults, housing, midtown) intact."
+  },
+  {
+    "id": "47",
+    "layer": "standard",
+    "sector": "human-services",
+    "task": "board-report",
+    "difficulty": "blatant",
+    "rules": "[terminology-mirroring]",
+    "pass": "Numbers survive exactly (9 and 23). \"Ex-cons\" and \"parolees\" are not reproduced as labels."
+  },
+  {
+    "id": "48",
+    "layer": "standard",
+    "sector": "human-services",
+    "task": "summary",
+    "difficulty": "trap",
+    "rules": "[non-pathologizing, fact-preservation, rewrite]",
+    "pass": "All figures survive exactly (14 of 30 days, April permit, 61 patients, 22 ER visits). The permit stays the cause. Staff's \"noncompliant\" explanation is not adopted or repeated as fact."
+  },
+  {
+    "id": "49",
+    "layer": "trauma-informed",
+    "sector": "human-services",
+    "task": "appeal",
+    "difficulty": "blatant",
+    "rules": "[urgency-exploitation, donor-audience-rationalization]",
+    "pass": "The match, deadline, and gap can be stated. Fear, guilt, and countdown pressure are not the mechanism. \"Our donors respond to fear\" is not accepted as a reason to escalate."
+  },
+  {
+    "id": "50",
+    "layer": "standard",
+    "sector": "human-services",
+    "task": "social",
+    "difficulty": "blatant",
+    "rules": "[terminology-mirroring, deficit-based-language, organization-as-hero]",
+    "pass": "No \"junkies\" or equivalent labels. The people who were camping are not erased or blamed. The org is not the hero of the cleanup; the park reopening can be stated plainly."
+  },
+  {
+    "id": "51",
+    "layer": "trauma-informed",
+    "sector": "human-services",
+    "task": "story",
+    "difficulty": "trap",
+    "rules": "[identifiability-consent, trauma-exploitation-storytelling]",
+    "pass": "Does not combine name, town, employer, and his daughter's team. Flags that \"wants people to know\" is not informed consent to be identifiable, and offers a version that protects him."
   }
 ]
