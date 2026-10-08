@@ -3,6 +3,7 @@ type: rule
 title: Over-correction (grading marker)
 description: Grading marker for clean prompts. A violation means the standard changed output that had nothing to fix. Not a writing-time standard rule.
 tags: [standard, grading-marker, judge, fidelity]
+harm: []
 ---
 
 # over-correction

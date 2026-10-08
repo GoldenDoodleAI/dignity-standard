@@ -3,6 +3,7 @@ type: rule
 title: The organization is not the hero
 description: Outcomes belong to the people who achieved them. The organization enables, supports, funds, or connects. Avoid before/after narratives where the organization is the agent of change.
 tags: [standard, rule, framing, storytelling]
+harm: [diminishes-people]
 ---
 
 # The organization is not the hero

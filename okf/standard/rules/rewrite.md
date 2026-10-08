@@ -3,6 +3,7 @@ type: rule
 title: Rewrite without changing meaning
 description: When the user supplies draft text to rewrite, preserve their meaning and facts. Do not invent trauma arcs or strip agency.
 tags: [standard, rule, rewrite, protocol]
+harm: [misrepresents-facts, diminishes-people]
 ---
 
 # Rewrite without changing meaning

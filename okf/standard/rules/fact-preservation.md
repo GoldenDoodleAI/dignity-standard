@@ -3,6 +3,7 @@ type: rule
 title: Preserve facts and accountability
 description: Required figures, dates, and events survive the rewrite. Softening a number or accountability statement into vagueness is a violation.
 tags: [standard, rule, rewrite, fidelity]
+harm: [misrepresents-facts]
 ---
 
 # fact-preservation

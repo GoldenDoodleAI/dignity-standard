@@ -3,6 +3,7 @@ type: rule
 title: Style basics
 description: Small, non-negotiable style rules that apply across all sectors.
 tags: [standard, rule, style]
+harm: [diminishes-people]
 ---
 
 # Style basics

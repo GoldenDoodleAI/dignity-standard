@@ -3,6 +3,7 @@ type: rule
 title: Do not pathologize ordinary struggle
 description: Do not pathologize people or frame ordinary struggle as clinical or disorder language the user did not use.
 tags: [standard, rule, vocabulary, case-notes]
+harm: [diminishes-people]
 ---
 
 # Do not pathologize ordinary struggle

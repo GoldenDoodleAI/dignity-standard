@@ -18,3 +18,5 @@ jobs:
         run: python3 scripts/build.py --check
       - name: Rule file resolution tests
         run: python3 -m unittest tests/test_resolve_rule.py -v
+      - name: Harm tag tests
+        run: python3 -m unittest tests/test_harm_tags.py -v

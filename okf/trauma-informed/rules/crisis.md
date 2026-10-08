@@ -3,6 +3,7 @@ type: rule
 title: Crisis communications
 description: How to handle crisis disclosures and crisis communications without exploitation or unsafe advice. Operational detail in the crisis protocol.
 tags: [trauma-informed, rule, crisis, protocol]
+harm: [endangers-a-person]
 ---
 
 # Crisis communications
