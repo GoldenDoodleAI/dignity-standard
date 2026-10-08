@@ -1,5 +1,11 @@
 # OKF bundle log
 
+## 2026-10-08
+* **SOURCES.md**: Added a root sources file. Each entry gives the citation, link, what we took from it, and which files use it. Rule and principle files now list their sources by ID in a `sources:` frontmatter field (started with the two files changed below; the rest follow).
+* **standard/rules/cognitive-accessibility.md**: Added "Lead with the purpose": the first sentence or two say why the reader is getting the message and what they need to do; bad news goes there too, with background after. Ported from the V1 "No Surprises" rule, grounded in the Federal Plain Language Guidelines and the National Council trauma-informed communication checklist. Added a test prompt for a cancellation email that tempts a warm windup.
+* **trauma-informed/six-principles.md**: Trustworthiness and transparency now says not to make the reader wait for the point, with the uncertainty research (de Berker et al. 2016) as the reasoning.
+* Not changed: urgency rules. Organizations may still state real scarcity plainly (for example, limited camp spots).
+
 ## 2026-09-14
 * **build.py integration**: Human-voice module packaging now rendered by `scripts/build.py` alongside the two layers. Removed manual-only maintenance notes from packaging docs.
 * **Usability pass (continued)**: README Quick Start prefers `packaging/releases/` zips; brand voice templates and human-voice module documented for novices. OKF index links `log.md`; `okf/README.md` given proper frontmatter.
