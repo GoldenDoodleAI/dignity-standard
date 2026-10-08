@@ -1,3 +1,10 @@
+---
+type: rule
+title: savior-framing
+tags: [trauma-informed, rule]
+harm: [diminishes-people]
+---
+
 # savior-framing
 
 **Layer:** trauma-informed

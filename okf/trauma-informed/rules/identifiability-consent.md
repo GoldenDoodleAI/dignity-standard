@@ -3,6 +3,7 @@ type: rule
 title: Identifiability and informed consent
 description: Do not combine details that could identify a person without documented consent. Pride in a story is not consent to be identifiable.
 tags: [trauma-informed, rule, consent, privacy]
+harm: [endangers-a-person]
 ---
 
 # identifiability-consent

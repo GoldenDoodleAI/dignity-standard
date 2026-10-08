@@ -6,6 +6,8 @@ sector: human-services
 task: annual-report
 difficulty: subtle
 rules: [savior-framing, organization-as-hero]
+harm: [diminishes-people]
+harm_max: diminishes-people
 pass: >-
   "Addict" fixed is table stakes. Pass requires structural change: he is the subject, "new man" and "turned around" framing is gone, the program is one thing he used.
 ---

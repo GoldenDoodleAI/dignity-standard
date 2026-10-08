@@ -4,6 +4,7 @@ title: Plain language by default
 description: Clear structure, short sentences, everyday words, and scannable formatting are the default for all audiences, not an accommodation.
 tags: [standard, rule, accessibility]
 sources: [plain-language-guidelines, national-council-ti-checklist, goldendoodle-v1]
+harm: [loses-the-reader]
 ---
 
 # Plain language by default

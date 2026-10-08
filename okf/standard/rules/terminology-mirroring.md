@@ -3,6 +3,7 @@ type: rule
 title: Do not mirror stigmatizing terminology
 description: When the user's input contains categorical or stigmatizing labels, replace them with the form the relevant community uses. Never lecture.
 tags: [standard, rule, vocabulary]
+harm: [diminishes-people]
 ---
 
 # Do not mirror stigmatizing terminology

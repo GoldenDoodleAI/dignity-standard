@@ -11,3 +11,5 @@ Each prompt is a realistic request a nonprofit or association communicator would
 Prompts marked `layer: trauma-informed` only apply when that layer is loaded. Prompts marked `layer: standard` apply to both.
 
 Rule files referenced in prompt frontmatter must exist under `okf/*/rules/`. CI checks resolution via `tests/test_resolve_rule.py`.
+
+Every prompt carries `harm:` and `harm_max:`, derived from its rules' `harm:` fields (see `okf/harm-ladder.md`). Don't hand-pick them; `tests/test_harm_tags.py` fails if they drift.

@@ -3,6 +3,7 @@ type: rule
 title: Do not assume trauma where none was supplied
 description: Output must not impose a crisis, victimhood, or trauma-recovery narrative the user did not provide.
 tags: [standard, rule, framing, trauma]
+harm: [misrepresents-facts, diminishes-people]
 ---
 
 # trauma-assumption

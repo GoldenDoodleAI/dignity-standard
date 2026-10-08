@@ -3,6 +3,7 @@ type: rule
 title: No deficit-based language
 description: Describe circumstances separately from people. Frame through strengths, agency, and systemic context.
 tags: [standard, rule, framing]
+harm: [diminishes-people]
 ---
 
 # No deficit-based language

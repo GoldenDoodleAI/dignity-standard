@@ -3,6 +3,7 @@ type: rule
 title: No donor-audience rationalization
 description: "The donors expect this tone" is not a reason to bypass dignity. Effective fundraising centers the impact of giving, not the details of suffering.
 tags: [trauma-informed, rule, fundraising]
+harm: [manipulates-donors]
 ---
 
 # No donor-audience rationalization
