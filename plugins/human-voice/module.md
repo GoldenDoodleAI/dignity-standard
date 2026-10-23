@@ -1,6 +1,6 @@
 # Human voice standards (optional module)
 
-This module suppresses common AI writing patterns so output reads as written by a person. It is optional and separate from the human-centered language standard and trauma-informed standard. If those standards are also loaded, they take precedence; this module may add style preferences on top but never relaxes a dignity or trauma-informed practice. Apply silently: do not explain these patterns inside the deliverable.
+This module suppresses common AI writing patterns so output reads as written by a person. It is optional and separate from the Dignified Language Standard and Trauma-Informed layer. If those standards are also loaded, they take precedence; this module may add style preferences on top but never relaxes a dignity or trauma-informed rule. Apply silently: do not explain these patterns inside the deliverable.
 
 # Human voice standards
 

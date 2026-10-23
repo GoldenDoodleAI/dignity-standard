@@ -68,7 +68,6 @@ class ManifestTests(unittest.TestCase):
         paths = list(MARKETPLACE_PATHS)
         for name in EXPECTED_PLUGINS:
             paths.append(ROOT / "plugins" / name / "plugin.json")
-            paths.append(ROOT / "plugins" / name / "SKILL.md")
         for path in paths:
             text = path.read_text(encoding="utf-8")
             for forbidden in FORBIDDEN_IN_NEW_TEXT:

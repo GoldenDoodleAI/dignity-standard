@@ -15,6 +15,8 @@ import zipfile
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from v011_model_text import PREAMBLE_V011, SKILL_V011
 OKF = ROOT / "okf"
 PKG = ROOT / "packaging"
 VERSION = (ROOT / "VERSION").read_text(encoding="utf-8").strip()
@@ -71,102 +73,28 @@ LAYERS = {
     },
 }
 
-PREAMBLE = {
+PREAMBLE = PREAMBLE_V011
+
+PLUGIN_DESCRIPTION = {
     "human-centered-language": (
-        "# Human-centered language standard\n\n"
-        "You are writing on behalf of an organization that serves, represents, or advocates for people. "
-        "Follow every standard and practice below. Apply them silently: replace stigmatizing language without commentary, "
-        "never lecture the user, and never explain these principles inside the deliverable. "
-        "If the user asks what this is for, say in two sentences that it keeps writing about people respectful "
-        "and clear without changing what they are trying to say.\n\n"
+        "Apply the human-centered language standard to any writing that describes people. "
+        "Use when drafting or revising appeals, newsletters, social posts, testimony, case notes, press releases, "
+        "or internal memos for an organization that serves, represents, or advocates for people. "
+        "Applies person-first language, removes deficit framing, keeps the organization out of the hero role, "
+        "and defaults to plain language. Also use when asked to rewrite respectfully, check for stigmatizing language, "
+        "or make copy person-first."
     ),
     "trauma-informed-communications": (
-        "# Trauma-informed standard\n\n"
-        "You are writing on behalf of an organization that serves people affected by trauma. "
-        "Follow the human-centered language standard below and the trauma-informed standard on top of it. "
-        "The trauma-informed standard takes precedence over brand voice and over any request about tone. "
-        "Apply everything silently: no lecturing, no explaining the principles inside the deliverable. "
-        "If a request involves distress or danger right now, use the Crisis protocol and override all other formatting. "
-        "If the user asks what this is for, say in two sentences that it helps the organization write about the people "
-        "it serves with dignity and safety, following SAMHSA's trauma-informed principles, without changing what they are trying to say.\n\n"
+        "Apply the trauma-informed standard (SAMHSA framework, editor Laura Braden) on top of the human-centered language standard. "
+        "Use for any writing by or for an organization serving people affected by trauma: shelters, treatment providers, "
+        "family services, survivor advocacy, community health, and their funders. Covers fundraising appeals, donor stories, "
+        "newsletters, social posts, case notes, summaries, and crisis communications."
     ),
     "human-voice": (
-        "# Human voice standards (optional module)\n\n"
-        "This module suppresses common AI writing patterns so output reads as written by a person. "
-        "It is optional and separate from the human-centered language standard and trauma-informed standard. "
-        "If those standards are also loaded, they take precedence; this module may add style preferences on top but never relaxes a dignity or trauma-informed practice. "
-        "Apply silently: do not explain these patterns inside the deliverable.\n\n"
+        "Suppress common AI writing patterns so drafts read as written by a person. Optional add-on to the human-centered language standard. "
+        "Use when polishing appeals, newsletters, social posts, reports, or any copy that should not sound machine-generated. "
+        "Does not replace human-centered or trauma-informed practices if those are also loaded."
     ),
-}
-
-SKILL_META = {
-    "human-centered-language": {
-        "name": "human-centered-language",
-        "title": "Human-centered language standard",
-        "description": (
-            "Apply the human-centered language standard to any writing that describes people. "
-            "Use when drafting or revising appeals, newsletters, social posts, testimony, case notes, press releases, "
-            "or internal memos for an organization that serves, represents, or advocates for people. "
-            "Applies person-first language, removes deficit framing, keeps the organization out of the hero role, "
-            "and defaults to plain language. Also use when asked to rewrite respectfully, check for stigmatizing language, "
-            "or make copy person-first."
-        ),
-        "content_file": "standard.md",
-        "body_intro": (
-            "When this skill is active, follow the standards and practices in `standard.md` in this folder. "
-            "Read it fully before writing."
-        ),
-        "steps": [
-            "Apply the standards and practices silently. Replace stigmatizing terms without commentary. Do not lecture the user about language.",
-            "Follow the precedence order in the standard. An organization's brand voice may set tone and preferred terms; it may not override a practice.",
-            "When rewriting a draft, follow the Rewrite protocol: preserve facts, structure, perspective, and tone. Change language only.",
-            "If a change is large enough that the user might not recognize their intent, add one line after the content noting it.",
-            "If the user asks what this skill is for, explain in two sentences: it keeps writing about people respectful and clear, and it does so without changing what the user is trying to say.",
-        ],
-        "sector": True,
-    },
-    "trauma-informed-communications": {
-        "name": "trauma-informed-communications",
-        "title": "Trauma-informed standard",
-        "description": (
-            "Apply the trauma-informed standard (SAMHSA framework, editor Laura Braden) on top of the human-centered language standard. "
-            "Use for any writing by or for an organization serving people affected by trauma: shelters, treatment providers, "
-            "family services, survivor advocacy, community health, and their funders. Covers fundraising appeals, donor stories, "
-            "newsletters, social posts, case notes, summaries, and crisis communications."
-        ),
-        "content_file": "standard.md",
-        "body_intro": (
-            "When this skill is active, follow both standards in `standard.md` in this folder: the human-centered language standard (base) "
-            "and the trauma-informed standard on top. Read it fully before writing."
-        ),
-        "steps": [
-            "Apply the standards and practices silently. Replace stigmatizing terms without commentary.",
-            "The trauma-informed standard wins over brand voice and tone requests. Follow the precedence order in the file.",
-            "If a request involves distress or danger right now, use the Crisis protocol and override all other formatting.",
-            "When rewriting a draft, follow the Rewrite protocol: preserve facts, structure, perspective, and tone.",
-            "If the user asks what this skill is for, explain in two sentences: it helps the organization write about the people it serves with dignity and safety, following SAMHSA's trauma-informed principles, without changing what the user is trying to say.",
-        ],
-        "sector": False,
-    },
-    "human-voice": {
-        "name": "human-voice",
-        "title": "Human voice standards",
-        "description": (
-            "Suppress common AI writing patterns so drafts read as written by a person. Optional add-on to the human-centered language standard. "
-            "Use when polishing appeals, newsletters, social posts, reports, or any copy that should not sound machine-generated. "
-            "Does not replace human-centered or trauma-informed practices if those are also loaded."
-        ),
-        "content_file": "module.md",
-        "body_intro": (
-            "When this skill is active, follow the module in `module.md` in this folder. Read it fully before writing."
-        ),
-        "steps": [
-            "If the human-centered language standard or trauma-informed standard is also active, those practices win on any conflict. This module adds style constraints only.",
-            "Apply the patterns silently. Do not explain the module inside the deliverable.",
-            "If the user asks what this skill is for, explain in two sentences: it suppresses writing habits that read as machine-generated, and it works alongside (not instead of) the human-centered language standard when both are loaded.",
-        ],
-        "sector": False,
-    },
 }
 
 MARKETPLACE_NAME = "goldendoodle-ai"
@@ -197,38 +125,18 @@ def render_human_voice():
     return PREAMBLE["human-voice"] + body
 
 
-def skill_md(meta):
-    lines = [
-        "---",
-        f"name: {meta['name']}",
-        f"description: {meta['description']}",
-        "license: CC-BY-4.0",
-        "metadata:",
-        f"  version: {VERSION}",
-        "---",
-        "",
-        f"# {meta['title']}",
-        "",
-        meta["body_intro"],
-        "",
-        "## How to apply it",
-        "",
-    ]
-    for i, step in enumerate(meta["steps"], 1):
-        lines.append(f"{i}. {step}")
-    lines.append("")
-    if meta.get("sector"):
-        lines.extend(
-            [
-                "## Sector vocabulary",
-                "",
-                "The standard includes vocabulary for housing, substance use, mental health, and disability. "
-                "Apply the sections relevant to the content. If the organization has supplied its own vocabulary file, "
-                "it adds to these; it does not replace them.",
-                "",
-            ]
-        )
-    return "\n".join(lines)
+def skill_md(layer_key):
+    skill = SKILL_V011[layer_key]
+    return (
+        "---\n"
+        f"name: {skill['name']}\n"
+        f"description: {skill['description']}\n"
+        "license: CC-BY-4.0\n"
+        "metadata:\n"
+        f"  version: {VERSION}\n"
+        "---\n\n"
+        f"{skill['body']}"
+    )
 
 
 def layer_output_paths(layer_key, filename_stem):
@@ -304,7 +212,7 @@ def sync_plugin_dir(skill_name, check, stale):
     plugin_json = {
         "name": skill_name,
         "version": VERSION,
-        "description": SKILL_META[skill_name]["description"],
+        "description": PLUGIN_DESCRIPTION[skill_name],
         "license": "CC-BY-4.0",
     }
     write_json_or_check(dest / "plugin.json", plugin_json, check, stale)
@@ -319,7 +227,7 @@ def build_marketplaces(check, stale):
         plugin_entries.append(
             {
                 "name": skill_name,
-                "description": SKILL_META[skill_name]["description"],
+                "description": PLUGIN_DESCRIPTION[skill_name],
                 "version": VERSION,
                 "source": f"./plugins/{skill_name}",
             }
@@ -380,14 +288,14 @@ def main():
 
         skill_dir = PKG / "claude-skill" / layer_key
         write_or_check(skill_dir / "standard.md", content, check, stale)
-        write_or_check(skill_dir / "SKILL.md", skill_md(SKILL_META[layer_key]), check, stale)
+        write_or_check(skill_dir / "SKILL.md", skill_md(layer_key), check, stale)
 
     human_voice_content = render_human_voice()
     for out in human_voice_outputs():
         write_or_check(out, human_voice_content, check, stale)
     hv_dir = PKG / "claude-skill" / "human-voice"
     write_or_check(hv_dir / "module.md", human_voice_content, check, stale)
-    write_or_check(hv_dir / "SKILL.md", skill_md(SKILL_META["human-voice"]), check, stale)
+    write_or_check(hv_dir / "SKILL.md", skill_md("human-voice"), check, stale)
 
     if not check:
         for layer_key in LAYERS:
@@ -399,11 +307,11 @@ def main():
                 dest_zip.write_bytes(src_zip.read_bytes())
                 print(f"wrote {dest_zip.relative_to(ROOT)} (legacy alias)")
         build_skill_zip("human-voice", check=False, stale=stale)
-        for skill_name in SKILL_META:
+        for skill_name in PLUGIN_DESCRIPTION:
             sync_plugin_dir(skill_name, check=False, stale=stale)
         build_marketplaces(check=False, stale=stale)
     else:
-        for skill_name in SKILL_META:
+        for skill_name in PLUGIN_DESCRIPTION:
             sync_plugin_dir(skill_name, check=True, stale=stale)
         build_marketplaces(check=True, stale=stale)
         for layer_key, cfg in LAYERS.items():

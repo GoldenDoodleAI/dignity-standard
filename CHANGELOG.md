@@ -2,11 +2,11 @@
 
 ## v0.2.0 (October 2026)
 
-Rename and marketplace packaging: human-centered language standard and trauma-informed standard naming, `plugins/` stubs, and marketplace manifests (`goldendoodle-ai`, one plugin per skill). Version tracked in `VERSION`. Legacy compiled filenames `dignified-language.md` and `trauma-informed.md` kept as copies for one release.
+Breaking file and folder renames: primary compiled and skill paths are `human-centered-language` and `trauma-informed-communications`. Marketplace packaging (`goldendoodle-ai`, `plugins/`, manifests), `VERSION`, and CI manifest tests. Legacy compiled filenames `dignified-language.md` and `trauma-informed.md` remain byte-identical copies of the new primary files for one release.
 
-**Bench baseline:** v0.2.0 is a **new** Human-Centered Language Benchmark baseline. Compiled preambles, titles, and packaging wording changed (including "rules" to "standards and practices" in model-facing preambles).
+Model-facing text is unchanged from v0.1.1. Bench results remain comparable. No new baseline.
 
-Docs: install-first README (folded from PR #7), public copy no longer uses the old layer label, MKTNG benchmark credit in README testing section.
+Docs: install-first README (folded from PR #7), human-facing rename to human-centered language standard and the trauma-informed standard, MKTNG benchmark credit in README testing section.
 
 ## v0.1.1 (September 2026)
 
