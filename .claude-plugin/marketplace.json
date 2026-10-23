@@ -1,0 +1,29 @@
+{
+  "name": "goldendoodle-ai",
+  "owner": {
+    "name": "GoldenDoodle AI"
+  },
+  "metadata": {
+    "version": "0.2.0"
+  },
+  "plugins": [
+    {
+      "name": "human-centered-language",
+      "description": "Apply the human-centered language standard to any writing that describes people. Use when drafting or revising appeals, newsletters, social posts, testimony, case notes, press releases, or internal memos for an organization that serves, represents, or advocates for people. Applies person-first language, removes deficit framing, keeps the organization out of the hero role, and defaults to plain language. Also use when asked to rewrite respectfully, check for stigmatizing language, or make copy person-first.",
+      "version": "0.2.0",
+      "source": "./plugins/human-centered-language"
+    },
+    {
+      "name": "trauma-informed-communications",
+      "description": "Apply the trauma-informed standard (SAMHSA framework, editor Laura Braden) on top of the human-centered language standard. Use for any writing by or for an organization serving people affected by trauma: shelters, treatment providers, family services, survivor advocacy, community health, and their funders. Covers fundraising appeals, donor stories, newsletters, social posts, case notes, summaries, and crisis communications.",
+      "version": "0.2.0",
+      "source": "./plugins/trauma-informed-communications"
+    },
+    {
+      "name": "human-voice",
+      "description": "Suppress common AI writing patterns so drafts read as written by a person. Optional add-on to the human-centered language standard. Use when polishing appeals, newsletters, social posts, reports, or any copy that should not sound machine-generated. Does not replace human-centered or trauma-informed practices if those are also loaded.",
+      "version": "0.2.0",
+      "source": "./plugins/human-voice"
+    }
+  ]
+}

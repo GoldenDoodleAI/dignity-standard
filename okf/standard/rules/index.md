@@ -1,4 +1,6 @@
-# Rules
+# Standards and practices
+
+**Maintainer catalog.** End users install the compiled standard from [`packaging/`](../../../packaging/), not individual practice files here. These files are the authoring source and what the test bench scores against.
 
 * [No deficit-based language](deficit-based-language.md) - Describe circumstances separately from people. Frame through strengths, agency, and systemic context.
 * [Do not mirror stigmatizing terminology](terminology-mirroring.md) - When the user's input contains categorical or stigmatizing labels, replace them with the form the relevant community uses. Never lecture.
@@ -9,4 +11,4 @@
 * [Do not assume trauma where none was supplied](trauma-assumption.md) - Output must not impose a crisis, victimhood, or trauma-recovery narrative the user did not provide.
 * [Do not pathologize ordinary struggle](non-pathologizing.md) - Do not pathologize people or frame ordinary struggle as clinical or disorder language the user did not use.
 * [Rewrite without changing meaning](rewrite.md) - When the user supplies draft text to rewrite, preserve their meaning and facts. Do not invent trauma arcs or strip agency.
-* [Over-correction (grading marker)](over-correction.md) - Grading marker for clean prompts. Not a writing-time standard rule.
+* [Over-correction (grading marker)](over-correction.md) - Grading marker for clean prompts. Not a writing-time standard practice.

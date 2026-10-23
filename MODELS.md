@@ -1,6 +1,6 @@
 # Models
 
-The tested roster and judge panel are defined in the bench repo's `models.yaml`: https://github.com/GoldenDoodleAI/test-bench/blob/main/models.yaml. This file is a pointer so the standard repo stays about the standard. The judge panel is in `judges.yaml` in the same bench repo.
+The tested roster and judge panel are defined in the bench repository's `models.yaml`. This file is a pointer so the standard repo stays about the standard. See **The Human-Centered Language Benchmark** methodology when published (TODO: public URL on goldendoodleai.com).
 
 Roster principles (full reasoning in the bench METHODOLOGY.md):
 

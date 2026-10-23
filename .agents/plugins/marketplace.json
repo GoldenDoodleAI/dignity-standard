@@ -1,0 +1,41 @@
+{
+  "name": "goldendoodle-ai",
+  "interface": {
+    "displayName": "GoldenDoodle AI standards"
+  },
+  "plugins": [
+    {
+      "name": "human-centered-language",
+      "source": {
+        "source": "local",
+        "path": "./plugins/human-centered-language"
+      },
+      "policy": {
+        "installation": "AVAILABLE"
+      },
+      "category": "Productivity"
+    },
+    {
+      "name": "trauma-informed-communications",
+      "source": {
+        "source": "local",
+        "path": "./plugins/trauma-informed-communications"
+      },
+      "policy": {
+        "installation": "AVAILABLE"
+      },
+      "category": "Productivity"
+    },
+    {
+      "name": "human-voice",
+      "source": {
+        "source": "local",
+        "path": "./plugins/human-voice"
+      },
+      "policy": {
+        "installation": "AVAILABLE"
+      },
+      "category": "Productivity"
+    }
+  ]
+}

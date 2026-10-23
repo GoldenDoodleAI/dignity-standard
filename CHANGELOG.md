@@ -1,5 +1,13 @@
 # Changelog
 
+## v0.2.0 (October 2026)
+
+Rename and marketplace packaging: human-centered language standard and trauma-informed standard naming, `plugins/` stubs, and marketplace manifests (`goldendoodle-ai`, one plugin per skill). Version tracked in `VERSION`. Legacy compiled filenames `dignified-language.md` and `trauma-informed.md` kept as copies for one release.
+
+**Bench baseline:** v0.2.0 is a **new** Human-Centered Language Benchmark baseline. Compiled preambles, titles, and packaging wording changed (including "rules" to "standards and practices" in model-facing preambles).
+
+Docs: install-first README (folded from PR #7), public copy no longer uses the old layer label, MKTNG benchmark credit in README testing section.
+
 ## v0.1.1 (September 2026)
 
 **Brand voice templates** (`okf/templates/voice-interview.md`, `okf/templates/voice-profile.md`): the user-facing addition. Organizations can interview a model or fill in a blank profile to build their step-9 organization voice file.

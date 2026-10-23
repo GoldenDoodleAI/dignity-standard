@@ -1,0 +1,6 @@
+{
+  "name": "human-voice",
+  "version": "0.2.0",
+  "description": "Suppress common AI writing patterns so drafts read as written by a person. Optional add-on to the human-centered language standard. Use when polishing appeals, newsletters, social posts, reports, or any copy that should not sound machine-generated. Does not replace human-centered or trauma-informed practices if those are also loaded.",
+  "license": "CC-BY-4.0"
+}
