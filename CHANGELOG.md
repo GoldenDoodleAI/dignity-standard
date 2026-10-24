@@ -4,7 +4,9 @@
 
 Breaking file and folder renames: primary compiled and skill paths are `human-centered-language` and `trauma-informed-communications`. Marketplace packaging (`goldendoodle-ai`, `plugins/`, manifests), `VERSION`, and CI manifest tests. Legacy compiled filenames `dignified-language.md` and `trauma-informed.md` remain byte-identical copies of the new primary files for one release.
 
-Model-facing text is unchanged from v0.1.1. Bench results remain comparable. No new baseline.
+Model-facing compiled text (`packaging/compiled/*.md`) is unchanged from v0.1.1. Bench results remain comparable. No new baseline.
+
+After payload analysis showed the weekly bench sends only compiled files (not `SKILL.md`), Claude/plugin `SKILL.md` frontmatter and bodies were updated to the public vocabulary (`name` matches each plugin folder).
 
 Docs: install-first README (folded from PR #7), human-facing rename to human-centered language standard and the trauma-informed standard, MKTNG benchmark credit in README testing section.
 
