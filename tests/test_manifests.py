@@ -29,6 +29,22 @@ EXPECTED_PLUGINS = (
 )
 
 
+def skill_frontmatter_for_denylist(skill_md: str) -> str:
+    """Scan only name/description in SKILL frontmatter.
+
+    The markdown body is frozen v0.1.1 install copy and may contain retired
+    brand strings; the body is exempt from the denylist (see PR body).
+    """
+    parts = skill_md.split("---\n", 2)
+    if len(parts) < 2:
+        return skill_md
+    lines = []
+    for line in parts[1].splitlines():
+        if line.startswith("name:") or line.startswith("description:"):
+            lines.append(line)
+    return "\n".join(lines)
+
+
 class ManifestTests(unittest.TestCase):
     def test_version_file(self):
         self.assertRegex(VERSION, r"^\d+\.\d+\.\d+$")
@@ -72,7 +88,12 @@ class ManifestTests(unittest.TestCase):
             paths.append(ROOT / "plugins" / name / "SKILL.md")
             paths.append(ROOT / "packaging" / "claude-skill" / name / "SKILL.md")
         for path in paths:
-            text = path.read_text(encoding="utf-8")
+            raw = path.read_text(encoding="utf-8")
+            text = (
+                skill_frontmatter_for_denylist(raw)
+                if path.name == "SKILL.md"
+                else raw
+            )
             for forbidden in FORBIDDEN_IN_NEW_TEXT:
                 self.assertNotIn(
                     forbidden,

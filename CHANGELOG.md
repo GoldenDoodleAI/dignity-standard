@@ -6,7 +6,7 @@ Breaking file and folder renames: primary compiled and skill paths are `human-ce
 
 Model-facing compiled text (`packaging/compiled/*.md`) is unchanged from v0.1.1. Bench results remain comparable. No new baseline.
 
-After payload analysis showed the weekly bench sends only compiled files (not `SKILL.md`), Claude/plugin `SKILL.md` frontmatter and bodies were updated to the public vocabulary (`name` matches each plugin folder).
+After payload analysis showed the weekly bench sends only `packaging/compiled/*.md`, Claude/plugin `SKILL.md` uses public `name` and `description` (folder-matched, denylist-clean) while the **body** stays the frozen v0.1.1 install copy so installed users see the same substance the bench tests. `tests/test_skill_bench_parity.py` enforces compiled bytes == `standard.md`/`module.md` and frozen SKILL bodies.
 
 Docs: install-first README (folded from PR #7), human-facing rename to human-centered language standard and the trauma-informed standard, MKTNG benchmark credit in README testing section.
 

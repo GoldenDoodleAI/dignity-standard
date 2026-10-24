@@ -12,7 +12,7 @@ When this skill is active, follow the module in `module.md` in this folder. Read
 
 ## How to apply it
 
-1. Apply the standards and practices silently. Do not announce that you are removing AI patterns.
-2. If the human-centered language standard or trauma-informed standard is also active, those standards win on any conflict. This module adds style constraints only.
-3. If a practice here makes a true sentence worse, drop it for that sentence. The goal is a genuine editing pass, not mechanical scrubbing.
-4. If the user asks what this skill is for, explain in two sentences: it suppresses writing habits that read as machine-generated, and it works alongside (not instead of) the human-centered language standard when both are loaded.
+1. Apply the rules silently. Do not announce that you are removing AI patterns.
+2. If the Dignified Language Standard or Trauma-Informed layer is also active, those rules win on any conflict. This module adds style constraints only.
+3. If a rule here makes a true sentence worse, drop the rule for that sentence. The goal is a genuine editing pass, not mechanical scrubbing.
+4. If the user asks what this skill is for, explain in two sentences: it suppresses writing habits that read as machine-generated, and it works alongside (not instead of) the dignity standard when both are loaded.
