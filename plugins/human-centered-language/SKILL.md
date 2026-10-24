@@ -1,6 +1,9 @@
 ---
-name: dignified-language
-description: Apply the Dignified Language Standard to any writing that describes people. Use when drafting or revising appeals, newsletters, social posts, testimony, case notes, press releases, or internal memos for an organization that serves, represents, or advocates for people. Applies person-first language, removes deficit framing, keeps the organization out of the hero role, and defaults to plain language. Also use when asked to "rewrite this respectfully," "check this for stigmatizing language," or "make this person-first."
+name: human-centered-language
+description: Apply the human-centered language standard to any writing that describes people. Use when drafting or revising appeals, newsletters, social posts, testimony, case notes, press releases, or internal memos for an organization that serves, represents, or advocates for people. Applies person-first language, removes deficit framing, keeps the organization out of the hero role, and defaults to plain language. Also use when asked to rewrite respectfully, check for stigmatizing language, or make copy person-first.
+license: CC-BY-4.0
+metadata:
+  version: 0.2.0
 ---
 
 # Dignified Language Standard

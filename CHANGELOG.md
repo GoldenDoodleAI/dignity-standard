@@ -1,5 +1,15 @@
 # Changelog
 
+## v0.2.0 (October 2026)
+
+Breaking file and folder renames: primary compiled and skill paths are `human-centered-language` and `trauma-informed-communications`. Marketplace packaging (`goldendoodle-ai`, `plugins/`, manifests), `VERSION`, and CI manifest tests. Legacy compiled filenames `dignified-language.md` and `trauma-informed.md` remain byte-identical copies of the new primary files for one release.
+
+Model-facing compiled text (`packaging/compiled/*.md`) is unchanged from v0.1.1. Bench results remain comparable. No new baseline.
+
+After payload analysis showed the weekly bench sends only `packaging/compiled/*.md`, Claude/plugin `SKILL.md` uses public `name` and `description` (folder-matched, denylist-clean) while the **body** stays the frozen v0.1.1 install copy so installed users see the same substance the bench tests. `tests/test_skill_bench_parity.py` enforces compiled bytes == `standard.md`/`module.md` and frozen SKILL bodies.
+
+Docs: install-first README (folded from PR #7), human-facing rename to human-centered language standard and the trauma-informed standard, MKTNG benchmark credit in README testing section.
+
 ## v0.1.1 (September 2026)
 
 **Brand voice templates** (`okf/templates/voice-interview.md`, `okf/templates/voice-profile.md`): the user-facing addition. Organizations can interview a model or fill in a blank profile to build their step-9 organization voice file.

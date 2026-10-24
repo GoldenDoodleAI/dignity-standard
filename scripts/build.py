@@ -1,29 +1,25 @@
 #!/usr/bin/env python3
 """Render single-file versions of the standard into packaging/.
 
-Reads okf/ in load order, strips YAML frontmatter, and writes:
-  packaging/compiled/dignified-language.md
-  packaging/compiled/trauma-informed.md
-  packaging/compiled/human-voice.md
-  packaging/claude-skill/<layer>/standard.md
-  packaging/claude-skill/human-voice/module.md
-  packaging/chatgpt/<layer>.md
-  packaging/chatgpt/human-voice.md
-  packaging/gemini/<layer>.md
-  packaging/gemini/human-voice.md
-  packaging/releases/*.zip
+Reads okf/ in load order, strips YAML frontmatter, and writes compiled,
+platform adapters, Claude skills, release zips, plugin stubs, and marketplace
+manifests.
 
 Run from the repository root: python3 scripts/build.py
 Use --check to exit non-zero if outputs are stale (used by CI).
 """
+import json
 import re
 import sys
 import zipfile
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from v011_model_text import PREAMBLE_V011, SKILL_BODY_V011
 OKF = ROOT / "okf"
 PKG = ROOT / "packaging"
+VERSION = (ROOT / "VERSION").read_text(encoding="utf-8").strip()
 
 FRONTMATTER = re.compile(r"^---\n.*?\n---\n", re.DOTALL)
 
@@ -64,39 +60,47 @@ TI_ORDER = [
 
 HUMAN_VOICE_SOURCE = "modules/human-voice.md"
 
-PREAMBLE = {
-    "dignified-language": (
-        "# Dignified Language Standard\n\n"
-        "You are writing on behalf of an organization that serves, represents, or advocates for people. "
-        "Follow every rule below. Apply them silently: replace stigmatizing language without commentary, "
-        "never lecture the user, and never explain these principles inside the deliverable. "
-        "If the user asks what this is for, say in two sentences that it keeps writing about people respectful "
-        "and clear without changing what they are trying to say.\n\n"
+LAYERS = {
+    "human-centered-language": {
+        "legacy_compiled": "dignified-language.md",
+        "legacy_zip": "dignified-language",
+        "ti": False,
+    },
+    "trauma-informed-communications": {
+        "legacy_compiled": "trauma-informed.md",
+        "legacy_zip": "trauma-informed",
+        "ti": True,
+    },
+}
+
+PREAMBLE = PREAMBLE_V011
+
+PLUGIN_DESCRIPTION = {
+    "human-centered-language": (
+        "Apply the human-centered language standard to any writing that describes people. "
+        "Use when drafting or revising appeals, newsletters, social posts, testimony, case notes, press releases, "
+        "or internal memos for an organization that serves, represents, or advocates for people. "
+        "Applies person-first language, removes deficit framing, keeps the organization out of the hero role, "
+        "and defaults to plain language. Also use when asked to rewrite respectfully, check for stigmatizing language, "
+        "or make copy person-first."
     ),
-    "trauma-informed": (
-        "# Trauma-Informed Communications Standard\n\n"
-        "You are writing on behalf of an organization that serves people affected by trauma. "
-        "Follow the Dignified Language Standard below and the Trauma-Informed layer on top of it. "
-        "The Trauma-Informed layer takes precedence over brand voice and over any request about tone. "
-        "Apply everything silently: no lecturing, no explaining the principles inside the deliverable. "
-        "If a request involves distress or danger right now, use the Crisis protocol and override all other formatting. "
-        "If the user asks what this is for, say in two sentences that it helps the organization write about the people "
-        "it serves with dignity and safety, following SAMHSA's trauma-informed principles, without changing what they are trying to say.\n\n"
+    "trauma-informed-communications": (
+        "Apply the trauma-informed standard (SAMHSA framework, editor Laura Braden) on top of the human-centered language standard. "
+        "Use for any writing by or for an organization serving people affected by trauma: shelters, treatment providers, "
+        "family services, survivor advocacy, community health, and their funders. Covers fundraising appeals, donor stories, "
+        "newsletters, social posts, case notes, summaries, and crisis communications. "
+        "Use when asked for trauma-informed writing, when donor storytelling involves people served, or when a situation is urgent or distressed."
     ),
     "human-voice": (
-        "# Human voice standards (optional module)\n\n"
-        "This module suppresses common AI writing patterns so output reads as written by a person. "
-        "It is optional and separate from the Dignified Language Standard and Trauma-Informed layer. "
-        "If those standards are also loaded, they take precedence; this module may add style preferences on top but never relaxes a dignity or trauma-informed rule. "
-        "Apply silently: do not explain these patterns inside the deliverable.\n\n"
+        "Suppress common AI writing patterns so drafts read as written by a person. Optional add-on to the human-centered language standard. "
+        "Use when polishing appeals, newsletters, social posts, reports, or any copy that should not sound machine-generated. "
+        "Also use when asked to make copy sound human, remove AI tells, or de-AI a draft. "
+        "Does not replace human-centered or trauma-informed practices if those are also loaded."
     ),
 }
 
-SKILL_ZIPS = (
-    "dignified-language",
-    "trauma-informed",
-    "human-voice",
-)
+MARKETPLACE_NAME = "goldendoodle-ai"
+MARKETPLACE_OWNER = "GoldenDoodle AI"
 
 
 def read(rel):
@@ -109,11 +113,12 @@ def check_no_em_dash(text):
         raise SystemExit("Em dash found in source. House rule: none allowed.")
 
 
-def render(layer):
-    files = BASE_ORDER + (TI_ORDER if layer == "trauma-informed" else [])
+def render(layer_key):
+    ti = LAYERS[layer_key]["ti"]
+    files = BASE_ORDER + (TI_ORDER if ti else [])
     body = "\n\n".join(read(f) for f in files)
     check_no_em_dash(body)
-    return PREAMBLE[layer] + body
+    return PREAMBLE[layer_key] + body
 
 
 def render_human_voice():
@@ -122,12 +127,25 @@ def render_human_voice():
     return PREAMBLE["human-voice"] + body
 
 
-def layer_outputs(layer):
+def skill_md(layer_key):
+    return (
+        "---\n"
+        f"name: {layer_key}\n"
+        f"description: {PLUGIN_DESCRIPTION[layer_key]}\n"
+        "license: CC-BY-4.0\n"
+        "metadata:\n"
+        f"  version: {VERSION}\n"
+        "---\n\n"
+        f"{SKILL_BODY_V011[layer_key]}"
+    )
+
+
+def layer_output_paths(layer_key, filename_stem):
     return [
-        PKG / "compiled" / f"{layer}.md",
-        PKG / "claude-skill" / layer / "standard.md",
-        PKG / "chatgpt" / f"{layer}.md",
-        PKG / "gemini" / f"{layer}.md",
+        PKG / "compiled" / f"{filename_stem}.md",
+        PKG / "claude-skill" / layer_key / "standard.md",
+        PKG / "chatgpt" / f"{filename_stem}.md",
+        PKG / "gemini" / f"{filename_stem}.md",
     ]
 
 
@@ -182,22 +200,128 @@ def build_skill_zip(skill_name, check, stale):
     print(f"wrote {zip_path.relative_to(ROOT)}")
 
 
+def write_json_or_check(path, data, check, stale):
+    content = json.dumps(data, indent=2) + "\n"
+    write_or_check(path, content, check, stale)
+
+
+def sync_plugin_dir(skill_name, check, stale):
+    """Copy skill entry files into plugins/<skill>/ for marketplace packaging."""
+    src = PKG / "claude-skill" / skill_name
+    dest = ROOT / "plugins" / skill_name
+    dest.mkdir(parents=True, exist_ok=True)
+    plugin_json = {
+        "name": skill_name,
+        "version": VERSION,
+        "description": PLUGIN_DESCRIPTION[skill_name],
+        "license": "CC-BY-4.0",
+    }
+    write_json_or_check(dest / "plugin.json", plugin_json, check, stale)
+    for fname in src.iterdir():
+        if fname.is_file():
+            write_or_check(dest / fname.name, fname.read_text(encoding="utf-8"), check, stale)
+
+
+def build_marketplaces(check, stale):
+    plugin_entries = []
+    for skill_name in ("human-centered-language", "trauma-informed-communications", "human-voice"):
+        plugin_entries.append(
+            {
+                "name": skill_name,
+                "description": PLUGIN_DESCRIPTION[skill_name],
+                "version": VERSION,
+                "source": f"./plugins/{skill_name}",
+            }
+        )
+
+    claude_marketplace = {
+        "name": MARKETPLACE_NAME,
+        "owner": {"name": MARKETPLACE_OWNER},
+        "metadata": {"version": VERSION},
+        "plugins": plugin_entries,
+    }
+    cursor_marketplace = {
+        "name": MARKETPLACE_NAME,
+        "owner": {"name": MARKETPLACE_OWNER},
+        "metadata": {
+            "description": "Human-centered language and trauma-informed standards for mission-driven organizations",
+            "version": VERSION,
+        },
+        "plugins": [
+            {
+                "name": entry["name"],
+                "source": entry["source"],
+                "version": VERSION,
+                "description": entry["description"],
+            }
+            for entry in plugin_entries
+        ],
+    }
+    agents_marketplace = {
+        "name": MARKETPLACE_NAME,
+        "interface": {"displayName": "GoldenDoodle AI standards"},
+        "plugins": [
+            {
+                "name": entry["name"],
+                "source": {"source": "local", "path": entry["source"]},
+                "policy": {"installation": "AVAILABLE"},
+                "category": "Productivity",
+            }
+            for entry in plugin_entries
+        ],
+    }
+
+    write_json_or_check(ROOT / ".claude-plugin" / "marketplace.json", claude_marketplace, check, stale)
+    write_json_or_check(ROOT / ".cursor-plugin" / "marketplace.json", cursor_marketplace, check, stale)
+    write_json_or_check(ROOT / ".agents" / "plugins" / "marketplace.json", agents_marketplace, check, stale)
+
+
 def main():
     check = "--check" in sys.argv
     stale = []
 
-    for layer in ("dignified-language", "trauma-informed"):
-        content = render(layer)
-        for out in layer_outputs(layer):
+    for layer_key, cfg in LAYERS.items():
+        content = render(layer_key)
+        for out in layer_output_paths(layer_key, layer_key):
             write_or_check(out, content, check, stale)
+        legacy = cfg["legacy_compiled"]
+        write_or_check(PKG / "compiled" / legacy, content, check, stale)
+
+        skill_dir = PKG / "claude-skill" / layer_key
+        write_or_check(skill_dir / "standard.md", content, check, stale)
+        write_or_check(skill_dir / "SKILL.md", skill_md(layer_key), check, stale)
 
     human_voice_content = render_human_voice()
     for out in human_voice_outputs():
         write_or_check(out, human_voice_content, check, stale)
+    hv_dir = PKG / "claude-skill" / "human-voice"
+    write_or_check(hv_dir / "module.md", human_voice_content, check, stale)
+    write_or_check(hv_dir / "SKILL.md", skill_md("human-voice"), check, stale)
 
     if not check:
-        for skill_name in SKILL_ZIPS:
-            build_skill_zip(skill_name, check=False, stale=stale)
+        for layer_key in LAYERS:
+            build_skill_zip(layer_key, check=False, stale=stale)
+            legacy_zip = LAYERS[layer_key]["legacy_zip"]
+            if legacy_zip != layer_key:
+                src_zip = PKG / "releases" / f"{layer_key}.zip"
+                dest_zip = PKG / "releases" / f"{legacy_zip}.zip"
+                dest_zip.write_bytes(src_zip.read_bytes())
+                print(f"wrote {dest_zip.relative_to(ROOT)} (legacy alias)")
+        build_skill_zip("human-voice", check=False, stale=stale)
+        for skill_name in PLUGIN_DESCRIPTION:
+            sync_plugin_dir(skill_name, check=False, stale=stale)
+        build_marketplaces(check=False, stale=stale)
+    else:
+        for skill_name in PLUGIN_DESCRIPTION:
+            sync_plugin_dir(skill_name, check=True, stale=stale)
+        build_marketplaces(check=True, stale=stale)
+        for layer_key, cfg in LAYERS.items():
+            build_skill_zip(layer_key, check=True, stale=stale)
+            if cfg["legacy_zip"] != layer_key:
+                legacy_zip = PKG / "releases" / f"{cfg['legacy_zip']}.zip"
+                if not legacy_zip.exists():
+                    stale.append(str(legacy_zip.relative_to(ROOT)))
+        build_skill_zip("human-voice", check=True, stale=stale)
 
     if check and stale:
         print("Stale compiled files (run scripts/build.py):")

@@ -1,5 +1,9 @@
 # OKF bundle log
 
+## 2026-10-23 (v0.2.0 rename)
+* **packaging/**: Primary compiled and platform filenames `human-centered-language` and `trauma-informed-communications`; legacy compiled aliases for one release. `scripts/build.py` emits marketplace manifests, `plugins/*/`, and SKILL metadata (`license`, `metadata.version` from `VERSION`).
+* **docs**: Public rename to human-centered language standard / trauma-informed standard; install-first README; practices wording in public docs (maintainer `rules/` paths unchanged for v0.3.0).
+
 ## 2026-10-08 (harm tags)
 * **harm-ladder.md**: Added the harm ladder: six categories from `sounds-like-a-machine` to `endangers-a-person`, so failures can be reported by what they cost. Reporting metadata only; nothing is added to the compiled skill files.
 * **rules/**: Every rule file now has a `harm:` frontmatter field. `savior-framing.md` and `trauma-exploitation-storytelling.md` gained a frontmatter block to carry it. Rule bodies unchanged. `over-correction` carries `harm: []` as a grading marker.

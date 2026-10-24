@@ -8,11 +8,11 @@ Agent: ask the questions below one at a time and wait for an answer. Three quest
 
 Ask: **"Does your work involve people who've been through something hard? Shelter, domestic violence, foster care, recovery, crisis response, that kind of thing."**
 
-- Yes, or anything close to yes: **Trauma-Informed**. It includes everything in the base.
-- No, or unsure: **Dignified Language Standard**. Say they can add the other layer later without redoing anything.
-- If they hesitate or say "sort of," take the yes. The extra rules are quiet when there is nothing for them to catch.
+- Yes, or anything close to yes: **Trauma-informed standard**. It includes everything in the base.
+- No, or unsure: **Human-centered language standard**. Say they can add the other layer later without redoing anything.
+- If they hesitate or say "sort of," take the yes. The extra practices are quiet when there is nothing for them to catch.
 
-Do not read them the difference between the layers unless they ask. If they ask, answer in two sentences: the base is about writing respectfully about people in general, the Trauma-Informed layer adds rules for fundraising, storytelling, and crisis content when the people you serve have been through trauma.
+Do not read them the difference between the layers unless they ask. If they ask, answer in two sentences: the base is about writing respectfully about people in general, the trauma-informed standard adds practices for fundraising, storytelling, and crisis content when the people you serve have been through trauma.
 
 ## Question 2: where it lives
 
@@ -32,25 +32,25 @@ Match their answer against `okf/standard/vocabulary/`. Files exist for housing, 
 
 ## Install
 
-**Claude, as a skill.** Download `dignified-language.zip` or `trauma-informed.zip` from the latest GitHub release. Settings, then Customize, then Skills, then Add, then Upload a skill. Code execution and File creation have to be on first or the skill will not run. If you have file creation available, you can build the zip and hand it to them directly instead of sending them to the release page.
+**Claude, as a skill.** Download `human-centered-language.zip`, `trauma-informed-communications.zip`, or `human-voice.zip` from the latest GitHub release. Settings, then Customize, then Skills, then Add, then Upload a skill. Code execution and File creation have to be on first or the skill will not run. If you have file creation available, you can build the zip and hand it to them directly instead of sending them to the release page.
 
-**Claude, as a project.** Create the project, paste `packaging/compiled/dignified-language.md` or `trauma-informed.md` into project instructions, and add the sector vocabulary file as a project file.
+**Claude, as a project.** Create the project, paste `packaging/compiled/human-centered-language.md` or `trauma-informed-communications.md` into project instructions, and add the sector vocabulary file as a project file.
 
-**ChatGPT.** Create a Project. Paste `packaging/chatgpt/dignified-language.md` or `trauma-informed.md` into the project instructions. Upload the sector vocabulary as a project file. Do not send them to Custom GPTs; OpenAI is retiring them.
+**ChatGPT.** Create a Project. Paste `packaging/chatgpt/human-centered-language.md` or `trauma-informed-communications.md` into the project instructions. Upload the sector vocabulary as a project file. Do not send them to Custom GPTs; OpenAI is retiring them.
 
-**Gemini.** Create a Gem. Paste `packaging/gemini/dignified-language.md` or `trauma-informed.md` as its instructions.
+**Gemini.** Create a Gem. Paste `packaging/gemini/human-centered-language.md` or `trauma-informed-communications.md` as its instructions.
 
-**Anything else.** Point it at `okf/` and follow `okf/load-order.md`.
+**Anything else.** Paste `packaging/compiled/human-centered-language.md` or `trauma-informed-communications.md` as system context.
 
 ## Prove it works
 
 Do not stop at "installed." Run one test so they see it do something.
 
-Pull a prompt from `tests/prompts/` that matches their sector, or use their own words if they've already given you a sentence about their work. Show them the output the standard produces and the output it replaced, side by side, and name the one rule that made the difference.
+Pull a prompt from `tests/prompts/` that matches their sector, or use their own words if they've already given you a sentence about their work. Show them the output the standard produces and the output it replaced, side by side, and name the one practice that made the difference.
 
 Then say what happens next. Two lines:
 
-- It applies on its own now. They do not have to ask for it. They can also call it by name: "use the dignified language skill."
+- It applies on its own now. They do not have to ask for it. They can also call it by name: "use the human-centered language skill."
 - Models change. `MODELS.md` carries a monthly bench of how current models hold up against the standard. Worth a look before they switch models.
 
 ## Offer a voice profile

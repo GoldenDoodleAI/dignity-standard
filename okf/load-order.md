@@ -34,7 +34,7 @@ Follow this sequence when loading the bundle into an agent, RAG pipeline, or com
 
 ## Trauma-Informed layer (`trauma-informed/`)
 
-Load only if adopting the certified layer. Requires everything in `standard/` underneath it.
+Load only if adopting the trauma-informed standard. Requires everything in `standard/` underneath it.
 
 5. `trauma-informed/four-rs.md` and `trauma-informed/six-principles.md`
 6. `trauma-informed/rules/*.md` in this order:

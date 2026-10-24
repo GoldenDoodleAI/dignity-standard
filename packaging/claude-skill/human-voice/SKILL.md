@@ -1,6 +1,9 @@
 ---
 name: human-voice
-description: Suppress common AI writing patterns so drafts read as written by a person. Optional add-on to the Dignified Language Standard. Use when polishing appeals, newsletters, social posts, reports, or any copy that should not sound machine-generated. Also use when asked to "make this sound human," "remove AI tells," or "de-AI this draft." Does not replace dignity or trauma-informed rules if those are also loaded.
+description: Suppress common AI writing patterns so drafts read as written by a person. Optional add-on to the human-centered language standard. Use when polishing appeals, newsletters, social posts, reports, or any copy that should not sound machine-generated. Also use when asked to make copy sound human, remove AI tells, or de-AI a draft. Does not replace human-centered or trauma-informed practices if those are also loaded.
+license: CC-BY-4.0
+metadata:
+  version: 0.2.0
 ---
 
 # Human voice standards

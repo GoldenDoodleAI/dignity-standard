@@ -1,6 +1,6 @@
 ---
 type: principle
-title: What the Dignified Language Standard is for
+title: What the human-centered language standard is for
 description: The purpose and scope of the base standard. Read first.
 tags: [standard, principles]
 ---

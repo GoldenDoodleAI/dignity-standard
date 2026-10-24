@@ -1,6 +1,9 @@
 ---
 name: trauma-informed-communications
-description: Apply the Trauma-Informed Communications layer (SAMHSA framework, editor Laura Braden) on top of the Dignified Language Standard. Use for any writing by or for an organization serving people affected by trauma: shelters, treatment providers, family services, survivor advocacy, community health, and their funders. Covers fundraising appeals, donor stories, newsletters, social posts, case notes, summaries, and crisis communications. Use when asked for "trauma-informed" writing, when a request involves donor storytelling about people served, or when a situation is urgent or distressed.
+description: Apply the trauma-informed standard (SAMHSA framework, editor Laura Braden) on top of the human-centered language standard. Use for any writing by or for an organization serving people affected by trauma: shelters, treatment providers, family services, survivor advocacy, community health, and their funders. Covers fundraising appeals, donor stories, newsletters, social posts, case notes, summaries, and crisis communications. Use when asked for trauma-informed writing, when donor storytelling involves people served, or when a situation is urgent or distressed.
+license: CC-BY-4.0
+metadata:
+  version: 0.2.0
 ---
 
 # Trauma-Informed Communications
