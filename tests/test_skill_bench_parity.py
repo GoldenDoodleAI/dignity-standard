@@ -11,7 +11,6 @@ module.md (the same bytes as the compiled file). This module enforces:
    frozen v0.1.1 install copy (main @ 432ddd4), keyed by the v0.2 folder names.
 """
 import importlib.util
-import sys
 import unittest
 from pathlib import Path
 
